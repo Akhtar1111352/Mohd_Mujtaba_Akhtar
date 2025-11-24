@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohd Mujtaba Akhtar — Portfolio</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" rel="stylesheet"/>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Tiny helpers that won't fight your stylesheet -->
+  <style>
+    /* .me { font-weight: 800; color:#000 !important; } */
+    .pdf-badge {
+      display:inline-block; padding:3px 8px; border:1px solid #222; border-radius:6px;
+      font-size:.8rem; text-decoration:none; color:#111; background:#fff;
+    }
+    #about-selected .section-title.with-star{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;        /* space between star and text */
+  padding-left:0;   /* no manual indent needed */
+  margin:0;
+  line-height:1.1;
+}
+#about-selected .section-title.with-star::before{
+  content:"⭐";
+  position:static;  /* let flex lay it out */
+  transform:none;
+  font-size:1.1em;
+  line-height:1;
+}
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container header-flex">
+      <div class="brand" id="site-brand">
+        <a class="brand-link" href="#about" data-section="about">
+          <span class="brand-first">Mujtaba</span> <span class="brand-last">Akhtar</span>
+        </a>
+      </div>
+
+      <div class="social">
+        <a href="mailto:mmakhtar.research@gmail.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://scholar.google.com/citations?user=bwHU6i8AAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+        <a href="https://github.com/Akhtar1111352" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/mo-mujtaba-akhtar-b6bb77201/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/Mohammad8932770?t=L-97VOvyfLElSZNtJqtGJQ&s=08" target="_blank" rel="noopener" title="Twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+
+      <nav class="main-nav">
+        <a href="#about" class="nav-link active" data-section="about" aria-current="page">about</a>
+        <a href="#publications" class="nav-link" data-section="publications">publications</a>
+        <!-- <a href="#projects" class="nav-link" data-section="projects">projects</a> -->
+        <a href="#awards" class="nav-link" data-section="awards">awards</a>
+        <a href="#news" class="nav-link" data-section="news">news</a>
+        <!-- <a href="#cv" class="nav-link" data-section="cv">cv</a> -->
+      </nav>
+
+      <button id="toggle-theme" class="theme-btn" title="Toggle dark mode" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- ABOUT -->
+    <section class="profile-section spa-section" id="about">
+      <div class="profile-left">
+        <h1 class="name">
+          <span class="name-first">Mohd Mujtaba</span>
+          <span class="name-last">Akhtar</span>
+        </h1>
+
+        <p class="roleline">
+          <span id="roleTag" class="role-tag">
+            Research Associate @ IIIT-Delhi
+            <span class="role-sep" aria-hidden="true">|</span>
+            <a class="role-mail" href="mailto:mmakhtar.research@gmail.com">mmakhtar.research@gmail.com</a>
+          </span>
+        </p>
+
+        <p>
+          Hello! I am Mohd Mujtaba Akhtar. My core research interests revolve around
+          <span class="hl">speech</span> and <span class="hl">audio</span> processing,
+          with a particular focus on <span class="hl">audio deepfake detection</span>,
+          <span class="hl">emotional speech understanding</span>, and the application of
+          <span class="hl">multimodal</span> and <span class="hl">foundation models</span>
+          in both behavioral and forensic domains.
+        </p>
+
+        <p>
+          I am currently working on <span class="hl">audio deepfake detection</span> using
+          <span class="hl">transfer learning</span> from <span class="hl">foundation models</span> as
+          part of my thesis work.
+        </p>
+
+        <p>
+          I am actively seeking research collaboration opportunities in areas such as
+          <span class="hl">speech/audio deepfake detection</span>,
+          <span class="hl">audio-visual deepfake detection</span>,
+          <span class="hl">speech emotion recognition</span>,
+          <span class="hl">affective computing</span>, and
+          <span class="hl">speech-driven healthcare applications</span>.</p>
+
+          <p class="collab-line">
+  🤝 I'm always <span class="collab-emph">interested in collaborating</span> on exciting projects! 
+  If you have an idea or opportunity in mind, feel free to reach out. 
+  You can <span class="collab-emph">contact me</span> at 
+  <a href="mailto:mmakhtar.research@gmail.com">mmakhtar.research@gmail.com</a>.
+</p>
+
+<p class="phd-line">
+  I am proactively seeking <span class="phd-emph">PhD opportunities for Fall 2026</span> 
+  with a commitment to advancing research excellence. I welcome opportunities to 
+  collaborate with faculty and research groups aligned with my expertise.
+</p>
+
+        <p>
+          I am passionate about pushing the boundaries of what is possible with
+          <span class="maroon">speech and audio technology</span>.
+        </p>
+
+        <h2 class="about-h2">Research Interests</h2>
+        <ul class="about-list">
+          <li>Geometric Deep Learning</li>
+          <li>Computational Speech Analysis</li>
+          <li>Deepfake Forensics</li>
+          <li>Emotional Speech Understanding</li>
+          <li>Healthcare Applications (Speech)</li>
+          <li>Multimodal/Foundation Models</li>
+        </ul>
+
+        <!-- News teaser -->
+        <section id="news-preview" class="news-section">
+          <h2 class="news-title"><span class="news-bulb" aria-hidden="true">💡</span><span>News</span></h2>
+          <ul class="news-list">
+            <li>
+              <span class="news-date-badge">Oct 2025</span>
+              <a href="#publications" class="pub-jump news-count" data-venue="IJCNLP 2025"><strong>2 papers</strong></a>
+              accepted at <a class="news-venue" href="https://2025.aaclnet.org/" target="_blank" rel="noopener">IJCNLP 2025</a> as first author.
+            </li>
+            <li>
+              <span class="news-date-badge">Aug 2025</span>
+              <a href="#publications" class="pub-jump news-count" data-venue="APSIPA ASC 2025"><strong>4 papers</strong></a>
+              accepted at <a class="news-venue" href="https://www.apsipa2025.org/wp//" target="_blank" rel="noopener">APSIPA ASC 2025</a> as first author.
+            </li>
+            <li>
+              <span class="news-date-badge">June 2025</span>
+              <a href="#publications" class="pub-jump news-count" data-venue="INTERSPEECH 2025"><strong>7 papers</strong></a>
+              accepted at <a class="news-venue" href="https://www.interspeech2025.org/home/" target="_blank" rel="noopener">INTERSPEECH 2025</a> (6 first co-authored.)
+            </li>
+            <li>
+              <span class="news-date-badge">June 2025</span>
+              <a href="#publications" class="pub-jump news-count" data-venue="EUSIPCO 2025"><strong>2 papers</strong></a>
+              accepted at <a class="news-venue" href="https://eusipco2025.org//" target="_blank" rel="noopener">EUSIPCO 2025</a> as first author.
+            </li>
+            <li>
+              <span class="news-date-badge">June 2025</span>
+              <a href="#publications" class="pub-jump news-count" data-venue="ICASSP 2025"><strong>1 paper</strong></a>
+              accepted at <a class="news-venue" href="https://2025.ieeeicassp.org//" target="_blank" rel="noopener">ICASSP 2025</a> as second author.
+            </li>
+          </ul>
+          <p class="news-more"><span class="news-clock" aria-hidden="true">🕰️</span><a class="news-more-link" href="#news">all news …</a></p>
+          
+
+
+        </section>
+
+        
+
+        <!-- Selected Publications (About teaser) -->
+        <section id="about-selected" class="selected-section">
+          <h2 id="selpubs" class="section-title with-star">Selected Publications</h2>
+
+          <ul class="selected-list" id="selected-pubs-list">
+            <!-- SNIFR -->
+            <li class="sel-card">
+              <div class="sel-thumb">           
+  <img src="images/Snifr_page-0001.jpg" alt="SNIFR paper figure"> 
+  <span class="venue-ribbon">INTERSPEECH 2025</span>  
+</div>
+
+              <div class="sel-meta">
+                <h3 class="sel-title">
+                  <a href="https://arxiv.org/abs/2506.03378" target="_blank" rel="noopener">
+                SNIFR: Boosting Fine-Grained Child Harmful Content Detection Through Audio-Visual
+                    <br class="title-br">Alignment with Cascaded Cross-Transformer
+                  </a>
+                </h3>
+                <p class="sel-authors">
+                  Orchid Chetia Phukan, <strong class="me">Mohd Mujtaba Akhtar</strong>, Girish, Swarup Ranjan Behera, Abu Osama, Sarthak Jain, Priyabrata Mallick, Sai Kiran Patibandla, Pailla Balakrishna Reddy, Arun Balaji Buduru, Rajesh Sharma
+                </p>
+                <div class="sel-actions">
+                  <span class="chip soft">INTERSPEECH 2025</span>
+                  <a class="chip outline" href="https://arxiv.org/pdf/2506.03378" target="_blank" rel="noopener">PDF</a>
+                  <button class="chip outline abs-toggle" type="button">ABS</button>
+
+
+        <div class="abstract-box">
+         <p>
+            As video-sharing platforms have grown over the past decade,
+child viewership has surged, increasing the need for precise detection of harmful content like violence or explicit
+scenes. Malicious users exploit moderation systems by embedding unsafe content in minimal frames to evade detection. While prior research has focused on visual cues and
+advanced such fine-grained detection, audio features remain
+underexplored. In this study, we embed audio cues with
+visual for fine-grained child harmful content detection and
+introduce SNIFR, a novel framework for effective alignment.
+SNIFR employs a transformer encoder for intra-modality
+interaction, followed by a cascaded cross-transformer for
+inter-modality alignment. Our approach achieves superior
+performance over unimodal and baseline fusion methods,
+setting a new state-of-the-art.
+Index Terms: Child Unsafe Content, Multimodal Learning,
+Cross-Transformer
+         </p>
+         </div>
+                  
+                  
+                </div>
+              </div>
+            </li>
+
+            <!-- Mamba-based AFMs -->
+            <li class="sel-card">
+              <div class="sel-thumb">
+  <img src="images/Are mamba ..jpg" alt="Are Mamba-based AFMs paper figure">
+  <span class="venue-ribbon">EUSIPCO 2025</span>
+</div>
+              <div class="sel-meta">
+                <h3 class="sel-title">
+                  <a href="https://arxiv.org/abs/2506.02258" target="_blank" rel="noopener">
+                    Are Mamba-based Audio Foundation Models the Best Fit for Non-Verbal Emotion Recognition?
+                  </a>
+                </h3>
+                <p class="sel-authors">
+                  <strong class="me">Mohd Mujtaba Akhtar</strong>, Orchid Chetia Phukan, Girish, Swarup Ranjan Behera, Ananda Chandra Nayak, Sanjib Kumar Nayak, Arun Balaji Buduru, Rajesh Sharma
+                </p>
+                <div class="sel-actions">
+                  <span class="chip soft">EUSIPCO 2025</span>
+                  <a class="chip outline" href="https://arxiv.org/pdf/2506.02258" target="_blank" rel="noopener">PDF</a>
+                   <button class="chip outline abs-toggle" type="button">ABS</button>
+
+
+        <div class="abstract-box">
+         <p>
+            In this work, we focus on non-verbal vocal sounds
+emotion recognition (NVER). We investigate mamba-based
+audio foundation models (MAFMs) for the first time for NVER
+and hypothesize that MAFMs will outperform attention-based
+audio foundation models (AAFMs) for NVER by leveraging
+its state-space modeling to capture intrinsic emotional structures more effectively. Unlike AAFMs, which may amplify
+irrelevant patterns due to their attention mechanisms, MAFMs
+will extract more stable and context-aware representations,
+enabling better differentiation of subtle non-verbal emotional
+cues. Our experiments with state-of-the-art (SOTA) AAFMs
+and MAFMs validates our hypothesis. Further, motivated from
+related research such as speech emotion recognition, synthetic
+speech detection, where fusion of foundation models (FMs) have
+showed improved performance, we also explore fusion of FMs
+for NVER. To this end, we propose, RENO, that uses renyidivergence as a novel loss function for effective alignment of
+the FMs. It also makes use of self-attention for better intrarepresentation interaction of the FMs. With RENO, through
+the heterogeneous fusion of MAFMs and AAFMs, we show
+the topmost performance in comparison to individual FMs, its
+fusion and also setting SOTA in comparison to previous SOTA
+work.
+Index Terms—Non-Verbal Emotion Recognition, Mambabased Audio Foundation Models, Attention-based Audio Foundation Models
+         </p>
+         </div>
+                 
+                 
+                </div>
+              </div>
+            </li>
+
+            <!-- Strong Alone (ICASSP) -->
+            <li class="sel-card">
+              <div class="sel-thumb">
+  <img src="images/strong .._page-0001.jpg" alt="Strong Alone… figure">
+  <span class="venue-ribbon">ICASSP 2025</span>
+</div>
+              <div class="sel-meta">
+                <h3 class="sel-title">
+                  <a href="https://ieeexplore.ieee.org/abstract/document/10889257" target="_blank" rel="noopener">
+                    Strong Alone, Stronger Together: Synergizing Modality-Binding Foundation Models with Optimal Transport
+                    <br class="title-br">for Non-Verbal Emotion Recognition
+                  </a>
+                </h3>
+                <p class="sel-authors">
+                  Orchid Chetia Phukan, <strong class="me">Mohd Mujtaba Akhtar</strong>, Girish, Swarup Ranjan Behera, Sishir Kalita, Arun Balaji Buduru, Rajesh Sharma, S. R. Mahadeva Prasanna
+                </p>
+                <div class="sel-actions">
+                  <span class="chip soft">ICASSP 2025</span>
+                  <a class="chip outline" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10889257" aria-disabled="true">PDF</a>
+                 <button class="chip outline abs-toggle" type="button">ABS</button>
+
+
+        <div class="abstract-box">
+         <p>
+            In this study, we investigate multimodal foundation models (MFMs) for emotion recognition from non-verbal sounds. We hypothesize that MFMs, with their joint pre-training across multiple modalities, will be more effective in non-verbal sounds emotion recognition (NVER) by better interpreting and differentiating subtle emotional cues that may be ambiguous in audio-only foundation models (AFMs). To validate our hypothesis, we extract representations from state-of-the-art (SOTA) MFMs and AFMs and evaluated them on benchmark NVER datasets. We also investigate the potential of combining selected foundation model (FM) representations to enhance NVER further inspired by research in speech recognition and audio deepfake detection. To achieve this, we propose a framework called MATA (Intra-Modality Alignment through Transport Attention). Through MATA coupled with the combination of MFMs: LanguageBind and ImageBind, we report the topmost performance with accuracies of 76.47%, 77.40%, 75.12% and F1-scores of 70.35%, 76.19%, 74.63% for ASVP-ESD, JNV, and VIVAE datasets against individual FMs and baseline fusion techniques and report SOTA on the benchmark datasets.Index Terms: Non-Verbal Emotion Recognition, Multimodal Foundation Models, LanguageBind, ImageBind
+         </p>
+         </div>
+                
+                 
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          
+        </section>
+      </div>
+
+      <div class="profile-right about-right">
+        <figure class="photo-card">
+          <img src="images/akhtar ...png" alt="Profile Photo">
+          <figcaption class="address-badge">
+          <span style="font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace; font-weight:200; letter-spacing:0.4px; line-height:1.6;">
+        @ IIIT DELHI<br>
+  PHASE-III, NEW DELHI, 110020, INDIA
+</span>
+
+                 
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section class="section spa-section" id="publications" style="display:none">
+     <h2 class="pub-heading"> Conference publications</h2>
+<!-- <p class="pub-subline">publications by categories in reversed chronological order.</p> -->
+
+
+      <ul>
+        
+          <li class="year-sep" data-year="2025"></li>
+        <li>
+
+         <b><span class="ital">Curved Worlds Clear Boundaries:</span>  Generalizing Speech Deepfake Detection using Hyperbolic and Spherical Geometry Spaces</b><br>
+          Farhan Sheth*, Girish*, <b class="me"> Mohd Mujtaba Akhtar*</b>, Muskaan Singh<br>
+          <span class="pub-venue">IJCNLP 2025</span>
+          <a class="pdf-badge" href="https://drive.google.com/file/d/1VKSD0kaYQQnKj_ObyCU4s4wNRxutC0I-/view?usp=sharing" target="_blank" rel="noopener">PDF</a>
+          <button class="pdf-badge abs-toggle" type="button">ABS</button>
+
+        <div class="abstract-box">
+         <p>
+            In this work, we address the challenge
+of generalizable audio deepfake detection
+(ADD) across diverse speech synthesis
+
+paradigms—including conventional text-to-
+speech (TTS) systems and modern diffusion
+
+or flow-matching (FM) based generators.
+Prior work has mostly targeted individual
+
+synthesis families and often fails to gener-
+alize across paradigms due to overfitting to
+
+generation-specific artifacts. We hypothesize
+
+that synthetic speech, irrespective of its gen-
+erative origin, leaves behind shared structural
+
+distortions in the embedding space that can
+be aligned through geometry-aware modeling.
+To this end, we propose RHYME, a unified
+detection framework that fuses utterance-level
+embeddings from diverse pretrained speech
+encoders using non-Euclidean projections.
+RHYME maps representations into hyperbolic
+and spherical manifolds—where hyperbolic
+geometry excels at modeling hierarchical
+generator families, and spherical projections
+capture angular, energy-invariant cues such
+as periodic vocoder artifacts. The fused
+representation is obtained via Riemannian
+
+barycentric averaging, enabling synthesis-
+invariant alignment. RHYME outperforms
+
+individual PTMs and homogeneous fusion
+baselines, achieving top performance and
+setting new state-of-the-art in cross-paradigm ADD
+         </p>
+         </div>
+        </li>
+        <li>
+          <b>Towards Attribution of Generators and Emotional Manipulation in Cross-Lingual Synthetic Speech using Geometric Learning</b><br>
+          Girish*, <b class="me">Mohd Mujtaba Akhtar*</b>, Farhan Sheth, Muskaan Singh<br>
+          <span class="pub-venue">IJCNLP 2025</span>
+          <a class="pdf-badge" href="https://drive.google.com/file/d/1lEc8M1nQV39p_YYXck6sgUdPDynUxukU/view" target="_blank" rel="noopener">PDF</a>
+          <button class="pdf-badge abs-toggle" type="button">ABS</button>
+
+        <div class="abstract-box">
+         <p>
+            In this work, we address the problem of fine-
+grained traceback of emotional and manipula-
+tion characteristics from synthetically manipu-
+lated speech. We hypothesize that combining
+
+semantic–prosodic cues captured by Speech
+Foundation Models (SFMs) with fine-grained
+
+spectral dynamics from auditory representa-
+tions can enable more precise tracing of both
+
+emotion and manipulation source. To vali-
+date this hypothesis, we introduce MiCuNet,
+
+a novel multitask framework for fine-grained
+
+tracing of emotional and manipulation at-
+tributes in synthetically generated speech. Our
+
+approach integrates SFM embeddings with
+spectrogram-based auditory features through
+a mixed-curvature projection mechanism that
+spans Hyperbolic, Euclidean, and Spherical
+
+spaces guided by a learnable temporal gat-
+ing mechanism. Our proposed method adopts
+
+a multitask learning setup to simultaneously
+
+predict original emotions, manipulated emo-
+tions, and manipulation sources on the Emo-
+Fake dataset (EFD) across both English and
+
+Chinese subsets. MiCuNet yields consistent
+
+improvements, consistently surpassing conven-
+tional fusion strategies. To the best of our
+
+knowledge, this work presents the first study to
+
+explore a curvature-adaptive framework specifi-
+cally tailored for multitask tracking in synthetic
+
+speech.
+         </p>
+         </div>
+          
+        </li>
+        <li>
+          <b><span class="ital">PARROT:</span> Synergizing Mamba and Attention-based SSL Pre-Trained Models via Parallel Branch Hadamard Optimal Transport for Speech Emotion Recognition</b><br>
+          Orchid Chetia Phukan*, <b class="me">Mohd Mujtaba Akhtar*</b>, Girish*, Swarup Ranjan Behera, Sai Kiran Patibandla, Arun Balaji Buduru, Rajesh Sharma<br>
+          <span class="pub-venue">INTERSPEECH 2025</span>
+          <a class="pdf-badge" href="https://arxiv.org/pdf/2506.01138" target="_blank" rel="noopener">PDF</a>
+           <button class="pdf-badge abs-toggle" type="button">ABS</button>
+         <div class="abstract-box">
+         <p>
+            The emergence of Mamba as an alternative to attention-based
+architectures has led to the development of Mamba-based selfsupervised learning (SSL) pre-trained models (PTMs) for speech
+and audio processing. Recent studies suggest that these models
+achieve comparable or superior performance to state-of-the-art
+(SOTA) attention-based PTMs for speech emotion recognition
+(SER). Motivated by prior work demonstrating the benefits of
+PTM fusion across different speech processing tasks, we hypothesize that leveraging the complementary strengths of Mambabased and attention-based PTMs will enhance SER performance
+beyond the fusion of homogenous attention-based PTMs. To
+this end, we introduce a novel framework, PARROT that integrates
+parallel branch fusion with Optimal Transport and Hadamard
+Product. Our approach achieves SOTA results against individual
+PTMs, homogeneous PTMs fusion, and baseline fusion techniques, thus, highlighting the potential of heterogeneous PTM
+fusion for SER.
+Index Terms: Speech Emotion Recognition, Pre-Trained Models, Mamba-based Models, Attention-based Models
+         </p>
+         </div>
+        </li>
+
+        <li>
+          <b><span class="ital">SNIFR:</span> Boosting Fine-Grained Child Harmful Content Detection Through Audio-Visual Alignment with Cascaded Cross-Transformer</b><br>
+          Orchid Chetia Phukan, <b class="me">Mohd Mujtaba Akhtar*</b>, Girish*, Swarup Ranjan Behera, Abu Osama, Sarthak Jain, Priyabrata Mallick, Sai Kiran Patibandla, Pailla Balakrishna Reddy, Arun Balaji Buduru, Rajesh Sharma<br>
+          <span class="pub-venue">INTERSPEECH 2025</span>
+          <a class="pdf-badge" href="https://arxiv.org/pdf/2506.03378" target="_blank" rel="noopener">PDF</a>
+           <button class="pdf-badge abs-toggle" type="button">ABS</button>
+          <div class="abstract-box">
+         <p>
+            As video-sharing platforms have grown over the past decade,
+child viewership has surged, increasing the need for precise detection of harmful content like violence or explicit
+scenes. Malicious users exploit moderation systems by embedding unsafe content in minimal frames to evade detection. While prior research has focused on visual cues and
+advanced such fine-grained detection, audio features remain
+underexplored. In this study, we embed audio cues with
+visual for fine-grained child harmful content detection and
+introduce SNIFR, a novel framework for effective alignment.
+SNIFR employs a transformer encoder for intra-modality
+interaction, followed by a cascaded cross-transformer for
+inter-modality alignment. Our approach achieves superior
+performance over unimodal and baseline fusion methods,
+setting a new state-of-the-art.
+Index Terms: Child Unsafe Content, Multimodal Learning,
+Cross-Transformer
+         </p>
+         </div>
+        </li>
+
+        <li>
+          <b><span class="ital">HYFuse:</span> Aligning Heterogeneous Speech Pre-Trained Representations in Hyperbolic Space for Speech Emotion Recognition</b><br>
+          Orchid Chetia Phukan*, Girish*, <b class="me">Mohd Mujtaba Akhtar*</b>, Swarup Ranjan Behera, Pailla Balakrishna Reddy, Arun Balaji Buduru, Rajesh Sharma<br>
+          <span class="pub-venue">INTERSPEECH 2025</span>
+          <a class="pdf-badge" href="https://arxiv.org/pdf/2506.03403" target="_blank" rel="noopener">PDF</a>
+         <button class="pdf-badge abs-toggle" type="button">ABS</button>
+          <div class="abstract-box">
+         <p>
+           Compression-based representations (CBRs) from neural audio
+codecs such as EnCodec capture intricate acoustic features like
+pitch and timbre, while representation-learning-based representations (RLRs) from pre-trained models trained for speech representation learning such as WavLM encode high-level semantic
+and prosodic information. Previous research on Speech Emotion Recognition (SER) has explored both, however, fusion of
+CBRs and RLRs haven’t been explored yet. In this study, we
+solve this gap and investigate the fusion of RLRs and CBRs and
+hypothesize they will be more effective by providing complementary information. To this end, we propose, HYFuse, a novel
+framework that fuses the representations by transforming them
+to hyperbolic space. With HYFuse, through fusion of x-vector
+(RLR) and Soundstream (CBR), we achieve the top performance
+in comparison to individual representations as well as the homogeneous fusion of RLRs and CBRs and report SOTA.
+Index Terms: Speech Emotion Recognition, Pre-Trained Models, Neural Audio Codec, Representations
+         </p>
+         </div>
+        </li>
+
+        <li>
+          <b>Investigating the Reasonable Effectiveness of Speaker Pre-Trained Models and their Synergistic Power for SingMOS Prediction</b><br>
+          Orchid Chetia Phukan*, Girish*, <b class="me">Mohd Mujtaba Akhtar*</b>, Swarup Ranjan Behera, Pailla Balakrishna Reddy, Arun Balaji Buduru, Rajesh Sharma<br>
+          <span class="pub-venue">INTERSPEECH 2025</span>
+          <a class="pdf-badge" href="https://arxiv.org/pdf/2506.02232" target="_blank" rel="noopener">PDF</a>
+          <button class="pdf-badge abs-toggle" type="button">ABS</button>
+          <div class="abstract-box">
+         <p>
+          In this study, we focus on Singing Voice Mean Opinion Score
+(SingMOS) prediction. Previous research have shown the performance benefit with the use of state-of-the-art (SOTA) pre-trained
+models (PTMs). However, they haven’t explored speaker recognition speech PTMs (SPTMs) such as x-vector, ECAPA and
+we hypothesize that it will be the most effective for SingMOS
+prediction. We believe that due to their speaker recognition pretraining, it equips them to capture fine-grained vocal features
+(e.g., pitch, tone, intensity) from synthesized singing voices in a
+much more better way than other PTMs. Our experiments with
+SOTA PTMs including SPTMs and music PTMs validates the
+hypothesis. Additionally, we introduce a novel fusion framework, BATCH that uses Bhattacharya Distance for fusion of PTMs.
+Through BATCH with the fusion of speaker recognition SPTMs,
+we report the topmost performance comparison to all the individual PTMs and baseline fusion techniques as well as setting
+SOTA.
+    <b class="me">Index Terms:</b> SingMOS, Pre-Trained Models, Speaker Recognition Pre-Trained Models
+         </p>
+         </div>
+        </li>
+
+        <li>
+          <b>Towards Machine Unlearning for Paralinguistic Speech Processing</b><br>
+          Orchid Chetia Phukan*, Girish*, <b class="me">Mohd Mujtaba Akhtar*</b>, Shubham Singh, Swarup Ranjan Behera, Vandana Rajan, Muskaan Singh, Arun Balaji Buduru, Rajesh Sharma<br>
+          <span class="pub-venue">INTERSPEECH 2025</span>
+          <a class="pdf-badge" href="https://arxiv.org/pdf/2506.02230" target="_blank" rel="noopener">PDF</a>
+         <button class="pdf-badge abs-toggle" type="button">ABS</button>
+          <div class="abstract-box">
+         <p>
+         In this work, we pioneer the study of Machine Unlearning (MU)
+for Paralinguistic Speech Processing (PSP). We focus on two
+key PSP tasks: Speech Emotion Recognition (SER) and Depression Detection (DD). To this end, we propose, SISA++, a
+novel extension to previous state-of-the-art (SOTA) MU method,
+SISA by merging models trained on different shards with weightaveraging. With such modifications, we show that SISA++ preserves performance more in comparison to SISA after unlearning
+in benchmark SER (CREMA-D) and DD (E-DAIC) datasets.
+Also, to guide future research for easier adoption of MU for PSP,
+we present “cookbook recipes” - actionable recommendations
+for selecting optimal feature representations and downstream
+architectures that can mitigate performance degradation after the
+unlearning process.
+Index Terms: Machine Unlearning, Paralinguistic Speech Processing, Speech Emotion Recognition, Depression Detection
+         </p>
+         </div>
+        </li>
+
+        <li>
+          <b>Towards Fusion of Neural Audio Codec-based Representations with Spectral for Heart Murmur Classification via Bandit-based Cross-Attention Mechanism</b><br>
+          Orchid Chetia Phukan*, Girish*, <b class="me">Mohd Mujtaba Akhtar*</b>, Swarup Ranjan Behera, Priyabrata Mallick, Santanu Roy, Arun Balaji Buduru, Rajesh Sharma<br>
+          <span class="pub-venue">INTERSPEECH 2025</span>
+          <a class="pdf-badge" href="https://arxiv.org/pdf/2506.01148" target="_blank" rel="noopener">PDF</a>
+          <button class="pdf-badge abs-toggle" type="button">ABS</button>
+          <div class="abstract-box">
+         <p>
+         In this study, we focus on heart murmur classification (HMC) and
+hypothesize that combining neural audio codec representations
+(NACRs) such as EnCodec with spectral features (SFs), such
+as MFCC, will yield superior performance. We believe such
+fusion will trigger their complementary behavior as NACRs
+excel at capturing fine-grained acoustic patterns such as rhythm
+changes, spectral features focus on frequency-domain properties
+such as harmonic structure, spectral energy distribution crucial
+for analyzing the complex of heart sounds. To this end, we
+propose, BAOMI, a novel framework banking on novel banditbased cross-attention mechanism for effective fusion. Here, a
+agent provides more weightage to most important heads in multihead cross-attention mechanism and helps in mitigating the noise.
+With BAOMI, we report the topmost performance in comparison
+to individual NACRs, SFs, and baseline fusion techniques and
+setting new state-of-the-art.
+Index Terms: Heart Murmur Classification, Neural Audio
+Codecs, Spectral Features
+         </div>
+        </li>
+
+        <li>
+          <b>Towards Source Attribution of Singing Voice Deepfake with Multimodal Foundation Models</b><br>
+          Orchid Chetia Phukan*, Girish*, <b class="me">Mohd Mujtaba Akhtar*</b>, Swarup Ranjan Behera, Priyabrata Mallick, Pailla Balakrishna Reddy, Arun Balaji Buduru, Rajesh Sharma<br>
+          <span class="pub-venue">INTERSPEECH 2025</span>
+          <a class="pdf-badge" href="https://arxiv.org/pdf/2506.03364" target="_blank" rel="noopener">PDF</a>
+          <button class="pdf-badge abs-toggle" type="button">ABS</button>
+          <div class="abstract-box">
+         <p>
+            In this work, we introduce the task of singing voice deepfake source attribution (SVDSA). We hypothesize that multimodal foundation models (MMFMs) such as ImageBind, LanguageBind will be most effective for SVDSA as they are better equipped for capturing subtle source-specific characteristics—such as unique timbre, pitch manipulation, or synthesis
+artifacts of each singing voice deepfake source due to their crossmodality pre-training. Our experiments with MMFMs, speech
+foundation models and music foundation models verify the hypothesis that MMFMs are the most effective for SVDSA. Furthermore, inspired from related research, we also explore fusion
+of foundation models (FMs) for improved SVDSA. To this end,
+we propose a novel framework, COFFE which employs Chernoff Distance as novel loss function for effective fusion of FMs.
+Through COFFE with the symphony of MMFMs, we attain the
+topmost performance in comparison to all the individual FMs
+and baseline fusion methods.
+Index Terms: Source Attribution, Singing Voice Deepfake,
+Deepfake Detection
+         </div>
+        </li>
+
+        <li>
+          <b>Are Mamba-based Audio Foundation Models the best fit for non-verbal emotion recognition?</b><br>
+          <b class="me">Mohd Mujtaba Akhtar*</b>, Orchid Chetia Phukan*, Girish*, Swarup Ranjan Behera, Ananda Chandra Nayak, Sanjib Kumar Nayak, Arun Balaji Buduru, Rajesh Sharma<br>
+          <span class="pub-venue">EUSIPCO 2025</span>
+          <a class="pdf-badge" href="https://arxiv.org/pdf/2506.02258" target="_blank" rel="noopener">PDF</a>
+          <button class="pdf-badge abs-toggle" type="button">ABS</button>
+          <div class="abstract-box">
+         <p>
+           In this work, we focus on non-verbal vocal sounds
+emotion recognition (NVER). We investigate mamba-based
+audio foundation models (MAFMs) for the first time for NVER
+and hypothesize that MAFMs will outperform attention-based
+audio foundation models (AAFMs) for NVER by leveraging
+its state-space modeling to capture intrinsic emotional structures more effectively. Unlike AAFMs, which may amplify
+irrelevant patterns due to their attention mechanisms, MAFMs
+will extract more stable and context-aware representations,
+enabling better differentiation of subtle non-verbal emotional
+cues. Our experiments with state-of-the-art (SOTA) AAFMs
+and MAFMs validates our hypothesis. Further, motivated from
+related research such as speech emotion recognition, synthetic
+speech detection, where fusion of foundation models (FMs) have
+showed improved performance, we also explore fusion of FMs
+for NVER. To this end, we propose, RENO, that uses renyidivergence as a novel loss function for effective alignment of
+the FMs. It also makes use of self-attention for better intrarepresentation interaction of the FMs. With RENO, through
+the heterogeneous fusion of MAFMs and AAFMs, we show
+the topmost performance in comparison to individual FMs, its
+fusion and also setting SOTA in comparison to previous SOTA
+work.
+<b class="me">Index Terms:</b> Non-Verbal Emotion Recognition, Mambabased Audio Foundation Models, Attention-based Audio Foundation Models
+         </div>
+        </li>
+
+        <li>
+          <b>Source Tracing of Synthetic Speech Systems Through Paralinguistic Pre-Trained Representations</b><br>
+          Girish*, <b class="me">Mohd Mujtaba Akhtar*</b>, Orchid Chetia Phukan*, Drishti Singh*, Swarup Ranjan Behera, Pailla Balakrishna Reddy, Arun Balaji Buduru, Rajesh Sharma<br>
+          <span class="pub-venue">EUSIPCO 2025</span>
+          <a class="pdf-badge" href="https://arxiv.org/pdf/2506.01157" target="_blank" rel="noopener">PDF</a>
+          <button class="pdf-badge abs-toggle" type="button">ABS</button>
+          <div class="abstract-box">
+         <p>
+            In this work, we focus on source tracing of synthetic speech generation systems (STSGS). Each source embeds
+distinctive paralinguistic features—such as pitch, tone, rhythm,
+and intonation—into their synthesized speech, reflecting the
+underlying design of the generation model. While previous
+research has explored representations from speech pre-trained
+models (SPTMs), the use of representations from SPTM pretrained for paralinguistic speech processing, which excel in
+paralinguistic tasks like synthetic speech detection, speech
+emotion recognition has not been investigated for STSGS. We
+hypothesize that representations from paralinguistic SPTM will
+be more effective due to its ability to capture source-specific
+paralinguistic cues attributing to its paralinguistic pre-training.
+Our comparative study of representations from various SOTA
+SPTMs, including paralinguistic, monolingual, multilingual, and
+speaker recognition, validates this hypothesis. Furthermore, we
+explore fusion of representations and propose TRIO, a novel
+framework that fuses SPTMs using a gated mechanism for
+adaptive weighting, followed by canonical correlation loss for
+inter-representation alignment and self-attention for feature
+refinement. By fusing TRILLsson (Paralinguistic SPTM) and
+x-vector (Speaker recognition SPTM), TRIO outperforms individual SPTMs, baseline fusion methods, and sets new SOTA for
+STSGS in comparison to previous works.
+Index Terms:Source Tracing, Paralinguistic Pre-Trained
+Models, Synthetic Speech Generators
+         </div>
+        </li>
+
+        <li>
+          <b><span class="ital">Strong Alone, Stronger Together:</span>  Synergizing Modality-Binding Foundation Models with Optimal Transport for Non-Verbal Emotion Recognition</b><br>
+          Orchid Chetia Phukan, <b class="me">Mohd Mujtaba Akhtar*</b>, Girish*, Swarup Ranjan Behera, Sishir Kalita, Arun Balaji Buduru, Rajesh Sharma, S.R Mahadeva Prasanna<br>
+          <span class="pub-venue">ICASSP 2025</span>
+          <a class="pdf-badge" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10889257" target="_blank" rel="noopener">PDF</a>
+          <button class="pdf-badge abs-toggle" type="button">ABS</button>
+          <div class="abstract-box">
+         <p>
+            In this study, we investigate multimodal foundation models (MFMs) for emotion recognition from non-verbal sounds. We hypothesize that MFMs, with their joint pre-training across multiple modalities, will be more effective in non-verbal sounds emotion recognition (NVER) by better interpreting and differentiating subtle emotional cues that may be ambiguous in audio-only foundation models (AFMs). To validate our hypothesis, we extract representations from state-of-the-art (SOTA) MFMs and AFMs and evaluated them on benchmark NVER datasets. We also investigate the potential of combining selected foundation model (FM) representations to enhance NVER further inspired by research in speech recognition and audio deepfake detection. To achieve this, we propose a framework called MATA (Intra-Modality Alignment through Transport Attention). Through MATA coupled with the combination of MFMs: LanguageBind and ImageBind, we report the topmost performance with accuracies of 76.47%, 77.40%, 75.12% and F1-scores of 70.35%, 76.19%, 74.63% for ASVP-ESD, JNV, and VIVAE datasets against individual FMs and baseline fusion techniques and report SOTA on the benchmark datasets.Index Terms: Non-Verbal Emotion Recognition, Multimodal Foundation Models, LanguageBind, ImageBind
+         </div>
+        </li>
+
+        <li>
+          <b>Are Multimodal Foundation Models All That Is Needed for Emofake Detection?</b><br>
+          <b class="me">Mohd Mujtaba Akhtar∗</b>, Girish∗, Orchid Chetia Phukan∗, Swarup Ranjan Behera, Parabattina Bhagath, Pailla Balakrishna Reddy, Arun Balaji Buduru<br>
+          <span class="pub-venue">APSIPA ASC 2025</span>
+          <a class="pdf-badge" href="https://arxiv.org/pdf/2509.16193" target="_blank rel="noopener">PDF</a>
+         <button class="pdf-badge abs-toggle" type="button">ABS</button>
+          <div class="abstract-box">
+         <p>In this work, we investigate multimodal foundation models (MFMs) for EmoFake detection (EFD) and hypothesize that they will outperform audio foundation models (AFMs). MFMs due to their cross-modal pre-training, learns emotional patterns from multiple modalities, while AFMs rely only on audio. As such, MFMs can better recognize unnatural emotional shifts and inconsistencies in manipulated audio, making them more effective at distinguishing real from fake emotional expressions. To validate our hypothesis, we conduct a comprehensive comparative analysis of state-of-the-art (SOTA) MFMs (e.g. LanguageBind) alongside AFMs (e.g. WavLM). Our experiments confirm that MFMs surpass AFMs for EFD. Beyond individual foundation models (FMs) performance, we explore FMs fusion, motivated by findings in related research areas such synthetic speech detection and speech emotion recognition. To this end, we propose SCAR, a novel framework for effective fusion. SCAR introduces a nested cross-attention mechanism, where representations from FMs interact at two stages sequentially to refine information exchange. Additionally, a self-attention refinement module further enhances feature representations by reinforcing important cross-FM cues while suppressing noise. Through SCAR with synergistic fusion of MFMs, we achieve SOTA performance, surpassing both standalone FMs and conventional fusion approaches and previous works on EFD.
+           
+         </div>
+        </li>
+
+        <li>
+          <b>Rethinking Cross-Corpus Speech Emotion Recognition Benchmarking: Are Paralinguistic Pre-Trained Representations Sufficient?</b><br>
+          Orchid Chetia Phukan∗, <b class="me">Mohd Mujtaba Akhtar∗</b>, Girish∗, Swarup Ranjan Behera, Pailla Balakrishna Reddy, Ananda Chandra Nayak, Sanjib Kumar Nayak, Arun Balaji Buduru<br>
+          <span class="pub-venue">APSIPA ASC 2025</span>
+          <a class="pdf-badge" href="https://arxiv.org/pdf/2509.16182" target="_blank" rel="noopener">PDF</a>
+         <button class="pdf-badge abs-toggle" type="button">ABS</button>
+          <div class="abstract-box">
+         <p>
+           Recent benchmarks evaluating pre-trained models
+(PTMs) for cross-corpus speech emotion recognition (SER) have
+overlooked PTM pre-trained for paralinguistic speech processing
+(PSP), raising concerns about their reliability, since SER is
+inherently a paralinguistic task. We hypothesize that PSP-focused
+PTM will perform better in cross-corpus SER settings. To test
+this, we analyze state-of-the-art PTMs representations including
+paralinguistic, monolingual, multilingual, and speaker recognition.
+Our results confirm that TRILLsson (a paralinguistic PTM)
+outperforms others, reinforcing the need to consider PSP-focused
+PTMs in cross-corpus SER benchmarks. This study enhances
+benchmark trustworthiness and guides PTMs evaluations for
+reliable cross-corpus SER.
+         </div>
+        </li>
+        </li>
+
+        <li>
+          <b>Investigating Polyglot Speech Foundation Models for Learning Collective Emotion from Crowds</b><br>
+          Orchid Chetia Phukan∗, Girish∗, <b class="me">Mohd Mujtaba Akhtar∗</b>, Panchal Nayak, Priyabrata Mallick, Swarup Ranjan Behera, Parabattina Bhagath, Pailla Balakrishna Reddy, Arun Balaji Buduru<br>
+          <span class="pub-venue">APSIPA ASC 2025</span>
+          <a class="pdf-badge" href="https://arxiv.org/pdf/2509.16329" target="_blank" rel="noopener">PDF</a>
+          <button class="pdf-badge abs-toggle" type="button">ABS</button>
+          <div class="abstract-box">
+         <p>
+           This paper investigates the polyglot (multilingual)
+speech foundation models (SFMs) for Crowd Emotion Recognition
+(CER). We hypothesize that polyglot SFMs, pre-trained on diverse
+languages, accents, and speech patterns, are particularly adept at
+navigating the noisy and complex acoustic environments characteristic of crowd settings, thereby offering a significant advantage for
+CER. To substantiate this, we perform a comprehensive analysis,
+comparing polyglot, monolingual, and speaker recognition SFMs
+through extensive experiments on a benchmark CER dataset
+across varying audio durations (1 sec, 500 ms, and 250 ms).
+The results consistently demonstrate the superiority of polyglot
+SFMs, outperforming their counterparts across all audio lengths
+and excelling even with extremely short-duration inputs. These
+findings pave the way for adaptation of SFMs in setting up new
+benchmarks for CER
+         </div>
+        </li>
+
+        <li>
+         <b><span class="ital">Beyond Speech and More:</span> Investigating the Emergent Ability of Speech Pre-Trained Models for Classifying Physiological Time-Series Signals</b><br>
+          Orchid Chetia Phukan∗, Swarup Ranjan Behera∗, Girish∗, <b class="me">Mohd Mujtaba Akhtar∗</b>, Arun Balaji Buduru, Rajesh Sharma<br>
+          <span class="pub-venue">APSIPA ASC 2025</span>
+          <a class="pdf-badge" href="https://arxiv.org/pdf/2410.12645" target="_blank" rel="noopener">PDF</a>
+          <button class="pdf-badge abs-toggle" type="button">ABS</button>
+          <div class="abstract-box">
+         <p>
+           Despite being trained exclusively on speech
+data, speech foundation models (SFMs) like
+Whisper have shown impressive performance
+in non-speech tasks such as audio classification. This is partly because speech shares some
+common traits with audio, enabling SFMs to
+transfer effectively. In this study, we push the
+boundaries by evaluating SFMs on a more challenging out-of-domain (OOD) task: classifying
+physiological time-series signals. We test two
+key hypotheses: first, that SFMs can generalize
+to physiological signals by capturing shared
+temporal patterns; second, that multilingual
+SFMs will outperform others due to their exposure to greater variability during pre-training,
+leading to more robust, generalized representations. Our experiments, conducted for stress
+recognition using ECG (Electrocardiogram),
+EMG (Electromyography), and EDA (Electrodermal Activity) signals, reveal that models
+trained on SFM-derived representations outperform those trained on raw physiological signals.
+Among all models, multilingual SFMs achieve
+the highest accuracy, supporting our hypothesis and demonstrating their OOD capabilities.
+This work positions SFMs as promising tools
+for new uncharted domains beyond speech.
+         </div>
+        </li>
+ <li class="year-sep" data-year="2024"></li>
+        <li>
+          <b><span class="ital">NeuRO:</span> an application for code-switched autism detection in children</b><br>
+          <b class="me">Mohd Mujtaba Akhtar*</b>, Girish*, Orchid Chetia Phukan*, Muskaan Singh*<br>
+          <span class="pub-venue">INTERSPEECH 2024 Show & Tell</span>
+          <a class="pdf-badge" href="https://arxiv.org/pdf/2406.03514" target="_blank" rel="noopener">PDF</a>
+           <button class="pdf-badge abs-toggle" type="button">ABS</button>
+          <div class="abstract-box">
+         <p>
+          Code-switching is a common communication phenomenon
+where individuals alternate between two or more languages
+or linguistic styles within a single conversation.Autism Spectrum Disorder(ASD) is a developmental disorder posing challenges in social interaction, communication, and repetitive behaviors.Detecting ASD in individuals with code-switch scenario presents unique challenges. In this paper, we address this
+problem by building an application NeuRO which aims to detect potential signs of autism in code-switched conversations,
+facilitating early intervention and support for individuals with
+ASD.
+Index Terms: speech recognition, human-computer interaction, computational paralinguistics
+         </div>
+        </li>
+         <li class="year-sep" data-year="2023"></li>
+         <li>
+          <b>Speech-Based Alzheimer’s Disease Classification System with Noise-Resilient Features Optimization</b><br>
+           Virendra kadyan, Puneet bawa, <b class="me">Mohd Mujtaba Akhtar</b> , Muskaan singh<br>
+          <span class="pub-venue">AICS 2023</span>
+          <a class="pdf-badge" href="https://drive.google.com/file/d/1ZypDcRS-Ipii2lLSfaHSnmtkZ06HD9lr/view" target="_blank" rel="noopener">PDF</a>
+          <button class="pdf-badge abs-toggle" type="button">ABS</button>
+          <div class="abstract-box">
+         <p>
+          Alzheimer’s disease is a severe neurological disorder
+
+having a major influence on a substantial portion of the popu-
+lation. The prompt detection of this condition is crucial, and
+
+speech analysis may play a crucial role in facilitating efficient
+treatment and care. The main aim of this research has been to
+investigate the significance of timely identification of speech signal
+abnormalities associated with Alzheimer’s disease in order to
+
+provide effective therapy interventions and improve disease man-
+agement. The study used the Mel Frequency Cepstral Coefficients
+
+(MFCC) framework, a well recognized technique for feature
+extraction known for its versatility across several domains. This
+research introduces an innovative approach that utilizes both
+individuals diagnosed with dementia and control participants to
+detect two unique types of cognitive impairment via the analysis
+of speech signals. The approach used in this work involves the
+extraction of acoustic properties from pre-processed speech data
+obtained from the Pitt Corpus of Dementia Bank. This is achieved
+by using several feature sets, which include a combination of
+MFCC, prosodic features, and statistical features. This study
+examines the attributes of optimum feature optimization in actual
+and noise-enhanced speech environments using machine learning
+techniques. The integration of MFCC,Statistical and prosodic
+features has shown remarkable outcomes, exhibiting a superior
+accuracy rate of 98.3%. This surpasses the performance of other
+feature combinations when using the Random Forest classifier.
+Index Terms—Alzheimer’s Disease, MFCC features, Prosodic
+Feature, Statistical Feature, Machine Learning, Classification
+         </div>
+        </li>
+
+      </ul>
+       <hr class="year-divider">
+      <h2 class="pub-heading">Journal Publications</h2>
+
+      <ul>
+        <li class="year-sep no-line" data-year="2025"></li>
+        <li>
+          <b><span class="ital">Optimizing Audio Encryption Efficiency:</span> A Novel Framework Using Double DNA Operations and Chaotic Map-Based Techniques</b><br>
+          <b class="me">Mohd Mujtaba Akhtar</b>, Muskaan Singh, Virender Kadyan, Mohit Dua<br>
+          <span class="pub-venue">Computer’s & Electrical Engineering 2025</span>
+          <a class="pdf-badge" href="https://pdf.sciencedirectassets.com/271419/1-s2.0-S0045790625X00021/1-s2.0-S004579062500031X/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDwaCXVzLWVhc3QtMSJHMEUCIQCWFhyETChxDs%2F8uATOKcnAjpMH1z7r2JEimmRUO9mrDQIgWYmN2gKkDhlpCTHneUuDtvkXIleFb1c4Jj%2FQ9UeYqCMquwUI9f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAFGgwwNTkwMDM1NDY4NjUiDPagA8PSneDWwJPUkSqPBXevvkoeAJ8EcZaFTr1ePR4x6Ljb331FmvJKqFoP6%2B8jB4Ide9nLm1V9egI9iUoaKIBHkuRC%2BZHC6r%2FFbvqWkL3GpjkvZ7YtJI078RaA8URMsLZ1619dHVYn4fbYfkSxP4GZPSltnfxJp73Wdr8R25p%2Fr2%2BXSlCyc3ijchs0I0VscYKZRbQAb6DKo2FOAUQwdweA0qhQmxcSr5FoNuAvtGG4RclWIpL2iRbgsDr4av7kR2hpSuSFaKw7xUR5WOdjq07%2FzwssM827I9MDFmiIDOjINukAqdoYd8o3uAJ%2FPIwMsyXAF%2F1EBiv3ybvU2r3jQ3Gi1dPOQMsV3gF6c7KzLygVLxz3PCtsKRv2i9yYW4XBT5l5HG4q5B%2BikoVqa5Ev5yWxTDsuQPTsytZD%2F6g7iXWE6HEy59DcFZp0We3CKZR5mdkewN27yhzKbsPgrCjjOfHvwHPYZOBa9QrfeKbtdeXel4ey8fFVg7JOKtv6y6EihzITu721YbsqcASO6OfycQ%2BhsNr4rgAImEUn1ohQCKwMCASOq7fHo0E%2Fj8fAwdbr5IGCCu8RAf2kq7%2BrfJl%2BeW8wDNF0c5SiuUj9WdqNrbxDTTi6kY1JCyasOE12bqtIEdApVfh9pMoyvAlErTR66vBT8A0cYy%2BQ%2BBujbs2f0jhcCRB%2BNgyP%2BBMmWgmtJMAlXIHLnSqnN2jGZ2JzmI97Lgezc1cAuEXTW1pwbjFQUJ803ROnhxJwFKPEYXUTeAHgjNj1GFI5Ywk4stlkH8qibT5Tfls1bMiY5I%2BtLkMvLbRnz%2FLtIs0aV81hG00xrho7TD9XTTn%2BRdBwTHsph%2BoOj0Xr9gKc8Ef9XuVLWetVU9u%2BIGrYA6M1PDP6ls%2FDSAUwnfeOyAY6sQHGx5u2ote3SmrMyPjXLnRpAJIAtod9V3806ijLOEyNAkDeDSbMv%2B1wExXcth3Rcr6ku5hIRMBYfTHAXkLQ4zS9lHwYNZJOcAqM5o%2FkMw7Ij5PWHCJhAd3aANJHpQMe%2FVIHG82kcO2EagjMoJV7zXwogF1RFXYoZz87HHFlJHXHenWTCMWCssNmupLcdrQ3btT%2FsDUrvNZQJD0IiZ9p98xnzz9a7ObwVEPFde9WyCWE9Q4%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20251030T194624Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTY25YYFAQG%2F20251030%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=672ee8660509b58b528a3768671bf3fa63171d440da5f27e3b9cb268db22572b&hash=18c502982605bccd70d0cef5ac032ba2208cdc10ff124b2afb23118abec7e383&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S004579062500031X&tid=spdf-a355156f-8544-49ce-b35c-26d77140a055&sid=aee1bdb231d84142a70a58f057aaa1b023f4gxrqa&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&rh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=070e5c565302590750&rr=996d6b28796f597b&cc=in" target="_blank" rel="noopener">PDF</a>
+          <button class="pdf-badge abs-toggle" type="button">ABS</button>
+          <div class="abstract-box">
+         <p>
+           In this study, we investigate multimodal foundation models (MFMs) for emotion recognition from non-verbal sounds. We hypothesize that MFMs, with their joint pre-training across multiple modalities, will be more effective in non-verbal sounds emotion recognition (NVER) by better interpreting and differentiating subtle emotional cues that may be ambiguous in audio-only foundation models (AFMs). To validate our hypothesis, we extract representations from state-of-the-art (SOTA) MFMs and AFMs and evaluated them on benchmark NVER datasets. We also investigate the potential of combining selected foundation model (FM) representations to enhance NVER further inspired by research in speech recognition and audio deepfake detection. To achieve this, we propose a framework called MATA (Intra-Modality Alignment through Transport Attention). Through MATA coupled with the combination of MFMs: LanguageBind and ImageBind, we report the topmost performance with accuracies of 76.47%, 77.40%, 75.12% and F1-scores of 70.35%, 76.19%, 74.63% for ASVP-ESD, JNV, and VIVAE datasets against individual FMs and baseline fusion techniques and report SOTA on the benchmark datasets.
+
+         </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- AWARDS -->
+<section class="section spa-section" id="awards" style="display:none">
+  <h2 class="pub-heading">awards & achievements</h2>
+  <p class="pub-subline">a list of my achievements throughout the years.</p>
+
+  <ul class="awards-list">
+    
+    <!-- <li>
+  Reviewer  for <b class="kbold"> <b>Neural Computing & Applications (Springer),</b>  <b>ICME 2025</b> and <b>ICASSP 2025</b>.
+  <span class="award-tags">
+    <span class="chip soft">2025</span>
+    <span class="chip soft">REVIEWER</span>
+  </span>
+</li> -->
+
+<!-- <li>
+   <b class="kbold">2 papers</b> <b>accepted</b> at <b>IJCNLP–AACL 2025</b> (2 papers): <b>Cross-Lingual Emotional Manipulation & Attribution</b> and <b>Curved Worlds, Clear Boundaries</b>.
+  <span class="award-tags">
+    <span class="chip soft">2025</span>
+    <span class="chip soft">FINDINGS</span>
+  </span>
+</li> -->
+
+<li>
+ <b class="kbold">Attended</b> <b>EUSIPCO 2025</b> (8–12 Sep,<b class="kbold"> Palermo, Italy</b>); engaged with leading researchers and latest advances in <b>signal processing</b>.
+  <span class="award-tags">
+    <span class="chip soft">Sep 2025</span>
+    <span class="chip soft">CONFERENCE</span>
+  <a class="chip soft" href="images/CERTIFICATE OF ATTENDANCE_page-0001.jpg" target="_blank" rel="noopener">LINK</a>
+  </span>
+</li>
+
+<!-- <li>
+  <b>Established<b class="kbold"> NEST (Non-Euclidean Speech Processing Laboratory)</b> Lab</b> in 2025.
+  <span class="award-tags">
+    <span class="chip soft">2025</span>
+    <span class="chip soft">LAB</span>
+  </span>
+</li> -->
+
+
+<!-- <li>
+  Received an <b>international conference grant</b> supporting multiple trips to present research and collaborate with global experts.
+  <span class="award-tags">
+    <span class="chip soft">2025</span>
+    <span class="chip soft">GRANT</span>
+  </span>
+</li> -->
+
+<!-- <li>
+  Awarded a <b>fully funded Master’s admission</b> at <b>Ulster University (UK)</b> for continuing research in <b>speech & audio AI</b>.
+  <span class="award-tags">
+    <span class="chip soft">Dec 2024</span>
+    <span class="chip soft">ADMISSION</span>
+  </span>
+</li> -->
+
+<li>
+  <b>Volunteer</b> with <b>ISCA-SAC</b>: scripting, hosting discussions, and post-editing for the global speech community.
+  <span class="award-tags">
+    <span class="chip soft">2024–Present</span>
+    <span class="chip soft">SERVICE</span>
+  </span>
+</li>
+
+<!-- <li>
+  <b>INTERSPEECH 2024 Show &amp; Tell</b> acceptance for <b>NeuRO</b>: application for code-switched <b class="kbold"> autism detection</b> in children.
+  <span class="award-tags">
+    <span class="chip soft">2024</span>
+    <span class="chip soft">SHOW &amp; TELL</span>
+  </span>
+</li> -->
+
+<!-- <li>
+  Excellence in<b> Open-Source</b> Contribution.
+  <span class="award-tags">
+    <span class="chip soft">2024</span>
+    <span class="chip soft">OPEN SOURCE</span>
+  </span>
+</li> -->
+
+<li>
+  <b>Our NEST lab</b> ranked among<b class="kbold"> Asia’s top</b> research groups with <b>seven papers</b> at <b>INTERSPEECH 2025</b>.
+  <span class="award-tags">
+    <span class="chip soft">2025</span>
+    <span class="chip soft">LAB</span>
+  </span>
+</li>
+
+<!-- <li>
+  Best<b> Hackathon</b> Team Leader<b class="kbold"> Award</b>
+  <span class="award-tags">
+    <span class="chip soft">Jan 2024</span>
+    <span class="chip soft">HACKATHON</span>
+  </span>
+</li> -->
+
+<li>
+  <b class="kbold">Virtusa Engineering Excellence Scholarship</b> — awarded in 2023 for outstanding all-round performance in academics and co-curricular activities; received<b> &#8377;40,000</b> as the sole recipient in the college.
+  <span class="award-tags">
+    <span class="chip soft">DEC 2023</span>
+    <span class="chip soft">SCHOLARSHIP</span>
+  </span>
+</li>
+
+<!-- <li>
+  Research internship at <b>Ulster University (United kingdom)</b> under <b>Dr. Muskaan Singh</b> engaging in<b class="kbold"> speech, audio,</b> and<b class="kbold"> signal processing</b> research.
+  <span class="award-tags">
+    <span class="chip soft">Nov 2023–May 2024</span>
+    <span class="chip soft">INTERNSHIP</span>
+  </span>
+</li> -->
+
+<!-- <li>
+  <b>UPES Dehradun College Award</b> for publishing at <b>AICS</b> <b  class="kbold">(Advanced International Conference on System).</b>
+  <span class="award-tags">
+    <span class="chip soft">2023</span>
+    <span class="chip soft">AICS</span>
+  </span>
+</li> -->
+
+<li>
+  <b>First Place — National Science Fair</b> for designing an<b class="kbold"> autonomous navigation system </b>butilizing haptic feedback to assist visually impaired individuals in independent mobility.
+  <span class="award-tags">
+    <span class="chip soft"> NOV 2022</span>         <!-- edit year if needed -->
+    <span class="chip soft">WINNER</span>
+  </span>
+</li>
+
+
+<li>
+  <b>Best Communicator Award</b> (12th Grade).
+  <span class="award-tags">
+    <span class="chip soft">Jan 2020</span>
+    <span class="chip soft">SCHOOL</span>
+  </span>
+</li>
+
+<li>
+  Innovation in<b> Extracurriculars</b> —<b class="kbold"> School Award (12th)</b>.
+  <span class="award-tags">
+    <span class="chip soft">Nov 2019</span>
+    <span class="chip soft">SCHOOL</span>
+  </span>
+</li>
+
+<li>
+  <b>Best All-Rounder Student</b> (12th, 2019–2020) with a
+  <b>sponsored domestic tour</b>
+  <!-- Replace the src below with your image path -->
+  <img
+    src="images/Screenshot 2025-11-02 at 15.01.09.png"
+    alt=""
+    aria-hidden="true"
+    style="width:35px;height:30px;margin-left:6px;vertical-align:text-top;opacity:.9;"
+  />
+  <b class="kbold"> prize</b>.
+  <span class="award-tags">
+    <span class="chip soft">Sep 2019</span>
+    <span class="chip soft">SCHOOL</span>
+  </span>
+</li>
+
+
+<li>
+  <b>Top Scorer</b> —<b class="kbold"> National Mathematics Olympiad</b> (11th Grade).
+  <span class="award-tags">
+    <span class="chip soft">Oct 2018</span>
+    <span class="chip soft">OLYMPIAD</span>
+  </span>
+</li>
+
+<li>
+  <b>Most Punctual</b><b class="kbold"> Student</b> — Class 10 Recognition.
+  <span class="award-tags">
+    <span class="chip soft">Aug 2017</span>
+    <span class="chip soft">SCHOOL</span>
+  </span>
+</li>
+
+<li>
+  <b>Sportsmanship Award</b> — School Annual Sports Meet (9th).
+  <span class="award-tags">
+    <span class="chip soft">Dec 2016</span>
+    <span class="chip soft">SPORTS</span>
+  </span>
+</li>
+
+
+  </ul>
+</section>
+
+
+    <!-- NEWS (full page) -->
+    <section class="section spa-section" id="news" style="display:none">
+      <h2 class="pub-heading" style="font-size:clamp(1.6rem,3.2vw,2.6rem); line-height:1.1; border-bottom:0; margin:0 0.1rem;" color:var(--text);>news</h2>
+
+      <p class="news-subline" style="font-size:.9rem; color:var(--muted);" margin:0 0 16px;>
+  all news reversed chronological order.
+</p>
+
+      <ul class="news-list">
+       <li><span class="news-date">Oct 2025</span> <b class="kbold">IJCNLP–AACL 2025</b> — 2 papers accepted as a first author.</li>
+
+<li><span class="news-date">Sept 2025</span>  Travelled to Palermo, Italy, for attending the<b> EUSIPCO 2025 conference.</b></li>
+<li><span class="news-date">Aug 2025</span> <b>4 papers</b> accepted at <b>APSIPA ASC 2025</b> as a first author.</li>
+
+<!-- <li><span class="news-date">June 2025</span><b>18 papers</b> with<b> first authors</b> are open access on arXiv, covering topics including<b> deepfake detection,</b> speech emotion recognition<b> (SER),</b> and<b> multimodal fusion.</b></li> -->
+<li><span class="news-date">Jun 2025</span> <b>7 papers</b> accepted at <b>INTERSPEECH 2025</b> 6 as a first author.</li>
+<li><span class="news-date">Jun 2025</span> <b>2 papers</b> accepted at <b>EUSIPCO 2025</b> as a first author.</li>
+<li><span class="news-date">Jun 2025</span> <b>1 paper</b> accepted at <b>ICASSP 2025</b> as a second author.</li>
+
+<li><span class="news-date">Jan 2025</span> Published an <b>audio-encryption framework</b> in Elsevier’s Computers & Electrical Engineering journal.</li>
+<li><span class="news-date">Dec 2024</span> Reviewer for <b>Neural Computing & Applications(Journal)</b>, <b>ICME 2025 (Conference)</b> , and <b>ICASSP 2026</b>.</li>
+
+<li><span class="news-date">Sep 2024</span> Volunteered with <b>ISCA-SAC</b>, scripting, hosting community discussions, and post-editing for the speech community.</li>
+<li><span class="news-date">Sep 2024</span> Research Intern at <b>Reliance Jio AICoE</b>, developing <b>MATA</b> (Modality Alignment through Transport Attention) for non-verbal emotion recognition (<b>NVER</b>).</li>
+<li><span class="news-date">Jun 2024</span> Computer Vision Intern at <b>Suratec (Bangkok)</b>, developing <b>real-time golf-swing phase detection</b> with live UI feedback.</li>
+<li><span class="news-date">May 2024</span> Began work as an ML Engineer at <b>Artviewings (California)</b>, building <b>multilingual AVQA datasets</b> (8 languages) and developing <b>MERA-series multimodal QA models</b>.</li>
+<li><span class="news-date">May 2024</span> Received degree <b>First-Class</b> with Distinction in <b>B.Tech (AI-ML) from UPES</b>.</li>
+<!-- <li><span class="news-date">Nov 2023–May 2024</span> Research Intern at<b> Ulster University (UK) </b>under<b> Dr. Muskaan Singh,</b> engaging in<b> speech, audio,</b> and<b> signal processing</b> research. -->
+
+<li><span class="news-date">Feb 2024</span> Submitted multiple first-author and co-authored papers to <b>INTERSPEECH</b>, <b>ICASSP</b>, and <b>EUSIPCO 2025</b>.</li>
+<li><span class="news-date">Jan 2024</span> Joined <b>IIIT-Delhi</b> as a <b>Research Associate</b> in USG (Usable Security Group) LAB .
+<!-- <li><span class="news-date">2023</span> Paper accepted at <b>AICS</b> on <b>speech-based Alzheimer’s detection</b> with <b>noise-resilient feature optimization</b>.</li> -->
+<li><span class="news-date">Jun 2023</span> Completed a <b>Software Developer Internship</b> at <b>IBM</b>, building a <b>3D RL-based robot</b> with vision, pick-and-place, and autonomous decisions.</li>
+
+      </ul>
+    </section>
+
+
+        <!-- CV
+    <section class="section spa-section" id="cv" style="display:none">
+      <h2 class="cv-heading">
+        <span class="cv-icon" aria-hidden="true">📄</span>
+        <span>CV</span>
+      </h2>
+
+      <p class="cv-text">
+        Full Resume in
+        <a href="M_M_Akhtar_CV (1).pdf" target="_blank" rel="noopener">PDF</a>.
+      </p>
+    </section> -->
+
+
+  </main>
+<footer class="site-footer">
+  <div class="container">
+    © 2025 Mohd Mujtaba Akhtar. Last updated: Oct 2025.
+  </div>
+</footer>
+
+
+  <!-- ===== JS: SPA + Theme toggle + single author truncation ===== -->
+  <script>
+    // SPA sections
+    const sections = document.querySelectorAll('.spa-section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    function showSection(id){
+      sections.forEach(s => s.style.display = (s.id === id ? '' : 'none'));
+      navLinks.forEach(l => { l.classList.remove('active'); l.removeAttribute('aria-current'); });
+      const current = document.querySelector(`.nav-link[data-section="${id}"]`);
+      if (current) { current.classList.add('active'); current.setAttribute('aria-current','page'); }
+      document.body.classList.toggle('show-brand', id !== 'about');
+      window.scrollTo({ top:0, behavior:'smooth' });
+    }
+    navLinks.forEach(link => link.addEventListener('click', e => {
+      e.preventDefault();
+      const id = link.dataset.section;
+      history.replaceState(null, '', '#' + id);
+      showSection(id);
+    }));
+    window.addEventListener('hashchange', () => showSection((location.hash || '#about').slice(1)));
+    showSection((location.hash || '#about').slice(1));
+
+    // Theme toggle
+    const THEME_KEY='mma-theme';
+    const toggleBtn=document.getElementById('toggle-theme');
+    function applyTheme(mode){
+      const dark = mode==='dark' || (mode==='auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.body.classList.toggle('dark', dark);
+      if (toggleBtn) {
+        toggleBtn.innerHTML = dark ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
+        toggleBtn.setAttribute('aria-pressed', String(dark));
+        toggleBtn.setAttribute('title', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+    }
+    let saved = localStorage.getItem(THEME_KEY) || 'light';
+    applyTheme(saved);
+    toggleBtn?.addEventListener('click', () => {
+      const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+      localStorage.setItem(THEME_KEY, next);
+      applyTheme(next);
+    });
+
+    // Truncate author list after "Girish" → "Girish, et. al.,"
+    (function () {
+      document.querySelectorAll('#about-selected .sel-authors').forEach(p => {
+        p.innerHTML = p.innerHTML.replace(/(Girish)\b[\s\S]*/, '$1, et. al.,');
+      });
+    })();
+    
+  // Auto-fit .sel-title so the FULL text fits in exactly two lines
+  function fitTitleToTwoLines(el, minPx = 12, maxPx = 22) {
+    // reset to a reasonable max first
+    el.style.fontSize = maxPx + 'px';
+    const cs = window.getComputedStyle(el);
+    const lh = parseFloat(cs.lineHeight);       // px
+    const maxHeight = lh * 2;                   // 2 lines
+
+    // If it already fits in <= 2 lines, we’re done
+    if (el.scrollHeight <= maxHeight + 1) return;
+
+    // Binary search the font-size to make it fit (fast + stable)
+    let lo = minPx, hi = maxPx, best = minPx;
+    for (let i = 0; i < 20; i++) {              // 20 iters is plenty
+      const mid = (lo + hi) / 2;
+      el.style.fontSize = mid + 'px';
+      if (el.scrollHeight <= maxHeight + 1) {   // fits: try bigger
+        best = mid;
+        lo = mid;
+      } else {
+        hi = mid;                               // too tall: smaller
+      }
+    }
+    el.style.fontSize = best + 'px';
+  }
+
+  function fitAllSelectedTitles() {
+    document.querySelectorAll('#about-selected .sel-title').forEach(el => {
+      // Measure on the <a> if present (inherits font-size from .sel-title)
+      const target = el.querySelector('a') || el;
+      // ensure no manual <br> forces more lines
+      el.querySelectorAll('.title-br').forEach(br => br.remove());
+      fitTitleToTwoLines(target);
+    });
+  }
+
+  // Run after load and on resize (throttled)
+  let _t;
+  window.addEventListener('load', fitAllSelectedTitles);
+  window.addEventListener('resize', () => {
+    clearTimeout(_t);
+    _t = setTimeout(fitAllSelectedTitles, 150);
+  });
+
+  // Also call after SPA section switches, if needed:
+  // showSection(...) already exists—hook it:
+  const _origShowSection = typeof showSection === 'function' ? showSection : null;
+  if (_origShowSection) {
+    window.showSection = function(id){
+      _origShowSection(id);
+      if (id === 'about') requestAnimationFrame(fitAllSelectedTitles);
+    }
+  }
+
+(function(){
+  // Clamp titles to exactly 2 lines
+  const s=document.createElement('style');
+  s.textContent=`#about-selected .sel-title,#about-selected .sel-title a{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;line-height:1.22;word-break:break-word;overflow-wrap:anywhere}`;
+  document.head.appendChild(s);
+
+  function fit(el,minPx=11,maxPx=18){
+    el.style.fontSize=maxPx+'px';
+    const lh=parseFloat(getComputedStyle(el).lineHeight), maxH=lh*2;
+    if(el.scrollHeight<=maxH+1) return;
+    let lo=minPx,hi=maxPx,best=minPx;
+    for(let i=0;i<20;i++){
+      const mid=(lo+hi)/2; el.style.fontSize=mid+'px';
+      if(el.scrollHeight<=maxH+1){best=mid;lo=mid}else hi=mid;
+    }
+    el.style.fontSize=best+'px';
+  }
+
+  function fitAll(){
+    const narrow=matchMedia('(max-width:800px)').matches, maxPx=narrow?16:18;
+    document.querySelectorAll('#about-selected .sel-title').forEach(el=>{
+      const a=el.querySelector('a')||el;
+      el.querySelectorAll('.title-br').forEach(br=>br.remove());
+      fit(a,11,maxPx);
+    });
+  }
+
+  let t;
+  addEventListener('load',fitAll);
+  addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(fitAll,150)});
+  if(typeof showSection==='function'){
+    const old=showSection;
+    window.showSection=function(id){old(id); if(id==='about') requestAnimationFrame(fitAll);}
+  }
+})();
+
+  </script>
+  <script>
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.abs-toggle');
+  if (!btn) return;                   // ignore other clicks
+  e.preventDefault();                 // safety: do nothing else
+
+  // find the abstract box in the same <li> and toggle it
+  const li  = btn.closest('li');
+  const box = li && li.querySelector('.abstract-box');
+  if (!box) return;
+  box.style.display = (box.style.display === 'block') ? 'none' : 'block';
+});
+</script>
+</body>
+</html>

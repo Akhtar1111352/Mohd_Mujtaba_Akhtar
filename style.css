@@ -1,0 +1,1194 @@
+/* ============ TOKENS ============ */
+:root{
+  /* base */
+  --bg: #fff;
+  --text: #222;
+  --muted: #666;
+  --soft: #f5f6f7;
+  --border: #eee;
+  --me-color: var(--accent-2);
+  /* light accents (maroon family) */
+  --accent: #9b1c2e;
+  --accent-2: #7f1d2d;
+  
+  /* header */
+  --header-bg: #fff;
+  --header-underline: rgba(0,0,0,.08);
+
+  /* components */
+  --chip-fill: #e0e3e7;
+  --chip-text: #222;
+  --chip-border: #111; 
+
+  /* cards/shadows */
+  --card-bg: #fafafd;
+  --card-shadow: 0 2px 18px 0 rgba(200,200,200,0.12);
+  
+  /* icon sizing tokens */
+--icon-box: 44px;   /* clickable box (width/height) */
+--icon-font: 28px;  /* glyph size */
+
+}
+
+/* Dark theme overrides */
+body.dark{
+  --bg: #1e1f22;
+  --text: #e7e9ee;
+  --muted: #c7cbd6;
+  --soft: #2b2d34;
+  --border: #373a46;
+  --me-color: var(--accent);  
+
+  /* dark accents (blue family) */
+  --accent: #7eb7ff;
+  --accent-2: #6aa4e8;
+
+  --header-bg: #1f2023;
+  --header-underline: rgba(255,255,255,.12);
+
+  --chip-fill: #1f2937;
+  --chip-text: #e5e7eb;
+  --chip-border: #374151;
+
+  --card-bg: transparent;
+  --card-shadow: none;
+}
+
+/* ============ BASE ============ */
+html,body{height:100%}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family: 'Roboto', Arial, sans-serif;
+  transition: background .3s, color .3s;
+  display:flex; flex-direction:column;
+}
+.container{max-width:1350px;margin:0 auto;width:100%;padding:0 1.5em}
+a{color:inherit;text-underline-offset:2px}
+/* Make mailto links snap to maroon on hover */
+a[href^="mailto"]{
+  text-decoration-color: currentColor;  /* underline follows text color */
+  text-decoration-thickness: 2px;
+  transition: none;                     /* no fade—instant */
+}
+a[href^="mailto"]:hover{
+  color: var(--accent);                 /* maroon text */
+  text-decoration-color: var(--accent); /* maroon underline */
+}
+
+
+/* ============ HEADER ============ */
+
+header::after { content: none; }
+.header-flex{
+  display:grid; grid-template-columns:1fr auto auto; align-items:center;
+  column-gap:14px; min-height:60px; padding: 22px 3.0 em; width:100%;
+  background:transparent;
+}
+
+
+
+
+/* Make the header itself paint the background and be the sticky surface */
+header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--header-bg);
+   border-bottom: 1px solid var(--header-underline);
+}
+
+.social{display:flex; gap:10px; align-items:center}
+.social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: var(--icon-box);
+  height: var(--icon-box);
+  
+}
+/* keep social icons from showing an underline */
+.social a{
+  text-decoration: none !important;
+  border-bottom: 0 !important;   /* in case a global rule adds borders to links */
+}
+
+/* keep it off on hover/focus too */
+.social a:hover,
+.social a:focus,
+.social a:focus-visible{
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+}
+
+/* make the icon itself turn maroon on hover/focus */
+.social a:hover i,
+.social a:focus i,
+.social a:hover .ai,
+.social a:focus .ai,
+.social a:hover .fab,
+.social a:focus .fab,
+.social a:hover .fas,
+.social a:focus .fas{
+  color: var(--accent);
+}
+
+.social i,.social .ai,.social .fab,.social .fas{
+  font-size: var(--icon-font);
+  line-height: 1;
+}
+
+.main-nav{display:flex; gap:22px; justify-content:flex-star}
+.nav-link{
+  text-decoration:none; color:#666; font-size:18px; font-weight:500;
+  transition:color .2s; line-height:1;
+}
+.nav-link:hover,.nav-link.active,[aria-current="page"].nav-link{color:var(--accent)}
+
+.theme-btn,#toggle-theme{
+  justify-self:end; background:transparent; border:0;
+  font-size:20px; color:#666; padding:4px; cursor:pointer; border-radius:8px;
+}
+body.dark .theme-btn, body.dark #toggle-theme{color:#ddd}
+
+/* keyboard focus */
+header nav a:focus-visible{
+  outline:2px solid #cc2874; outline-offset:2px; border-radius:4px;
+}
+body.dark header nav a:focus-visible{ outline-color: var(--accent) }
+
+/* brand vs social (optional) */
+.brand{display:none}
+.pub-mode .brand{display:block}
+.pub-mode .social{display:none}
+.brand-link{font-size:clamp(1.2rem,2.4vw,1.6rem);text-decoration:none}
+
+/* ============ MAIN LAYOUT ============ */
+main.container{
+  flex:1;
+  margin: calc(5.5em + 8px) auto 1em;   /* small extra space below header */
+  display:flex; flex-direction:column; gap:2.7em;padding-bottom: 48px
+}
+
+.profile-section{
+  display:flex; gap:2.2em; justify-content:space-between; align-items:flex-start;
+  background:transparent; border-radius:0; padding:2.2em;
+  box-shadow:none; border:0;
+}
+
+.profile-left{flex:3}
+.profile-right{flex:1.4; display:flex; flex-direction:column; align-items:flex-end; gap:.6em}
+
+/* hero photo (landscape) */
+.profile-right img,.hero-photo{
+  width:420px; max-width:100%; aspect-ratio:16/10; height:auto; object-fit:cover;
+  border-radius:12px; background:#fff; border:1px solid #e6e6e6;
+  box-shadow:0 6px 22px rgba(0,0,0,.10);
+}
+body.dark .profile-right img, body.dark .hero-photo{
+  border-color:#3a3a4a; box-shadow:0 6px 22px rgba(0,0,0,.35);
+}
+
+/* name + role */
+.name{
+  font-family:"Inter","Roboto",Arial,sans-serif;
+  font-size:clamp(1.8rem,1.2vw + 1.1rem,2.6rem);
+  line-height:1.08; margin:0 0 .25em; letter-spacing:-.01em;
+}
+.name-first{font-weight:400}
+.name-last{font-weight:800; letter-spacing:-.02em}
+
+.roleline{margin:.25em 0 .7em}
+.role-tag{
+  display:inline-flex; align-items:baseline; gap:.5rem;
+  font-family:"Roboto Mono", ui-monospace, Menlo, Consolas, "Courier New", monospace;
+  font-weight:700;
+  font-size:clamp(.85rem,.2vw + .8rem, 95rem);
+  padding:.45em .75em;
+
+  /* make it rectangular */
+  border-radius: 0px;                     /* use 0 for perfectly square */
+  background: rgba(155, 28, 46, .08);
+  border: 1px solid rgba(155, 28, 46, .28);
+  border: none !important; 
+  border-radius: 0 !important;
+  color:#7f1d2d;
+}
+
+.role-sep{ opacity:.55 }               /* the vertical bar looks lighter */
+.role-mail{ text-decoration:none }
+.role-mail:hover{ text-decoration:underline }
+
+.role-mail{text-decoration:none}
+.role-mail:hover{text-decoration:underline}
+body.dark .role-tag{
+  background:#1f2a38; border:1px solid #2e3c50; color:var(--accent);
+}
+body.dark .role-mail{color:var(--accent)}
+
+/* inline highlight */
+/* inline highlight: bold + italic + black */
+.hl{
+  color: #000;          /* black in light mode */
+  font-weight: 700;     /* bold */
+  font-style: italic;   /* italic */
+  font-size: .95em;     /* keep your slight size tweak if you like */
+  line-height: 1;
+}
+
+/* dark mode: keep same style, but use theme text color instead of pure black */
+body.dark .hl{
+  color: var(--text);
+}
+
+
+
+/* contact/address */
+.profile-right address{font-size:.98em; color:#444; font-style:normal; margin-top:.5em; text-align:right}
+/* center the caption under the right-side image */
+.photo-card{ 
+  margin: 0;              /* remove default figure margins */
+  text-align: center;     /* centers the figcaption text */
+}
+.address-badge{
+  display: block; 
+  text-align: center;     /* center the lines */
+  margin-top: .5em;       /* a little space below the image */
+}
+
+.about-address{font-family:monospace; font-size:1em; line-height:1.22; margin:20px 0 0}
+
+/* ============ SECTION HEADERS ============ */
+.section{margin-top:1.6em}
+.section h2{
+  color:var(--accent); font-size:1.13em; letter-spacing:.03em;
+  border-bottom:1px solid var(--border); margin:.15em 0 .6em;
+}
+
+/* Research Interests (lighter) */
+.about-h2{ color:#2e2e2e; font-weight:600 }
+.profile-section .about-list{ margin:4px 0 10px 1.1em; padding-left:1.2em }
+.profile-section .about-list li{
+  color:#6f6f6f; font-weight:400; line-height:1.35; margin:2px 0;
+}
+.profile-section .about-list li::marker{ color:#9a9a9a }
+body.dark .about-h2{ color:#eaeaf1 }
+body.dark .profile-section .about-list li{ color:#d9d9e3 }
+/* only the bullet dots should be dark */
+.profile-section .about-list li::marker{ color: var(--text); }
+body.dark .profile-section .about-list li::marker{ color: var(--text); }
+
+/* ============ NEWS ============ */
+.news-section{ margin-top:16px }
+.news-title{
+  font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-weight:500; letter-spacing:.05px; color:#444;
+  font-size:clamp(1.32rem,1.0vw + 1rem,1.75rem); margin:12px 0 14px;
+}
+/* Bigger, darker yellow bulb next to "News" */
+.news-title{ display:flex; align-items:center; gap:.6rem; }  /* keeps text aligned */
+
+.news-bulb{
+  display:inline-grid;
+  place-items:center;
+  width:44px;                 /* size of the yellow tile */
+  height:44px;
+  font-size:22px;             /* size of the bulb glyph */
+  background:#f59e0b;         /* dark yellow */
+  border-radius:12px;         /* rounded square look */
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.25);
+}
+/* Space between News and Selected Publications */
+#news-preview {
+  margin-bottom: 3rem;      /* adds a nice vertical gap */
+}
+
+#about-selected {
+  margin-top: 3rem;         /* extra top padding for the star heading */
+}
+
+
+body.dark .news-bulb{
+  background:#d97706;         /* a bit deeper in dark mode */
+}
+
+body.dark .news-title{ color:#e6e6ee }
+
+.news-list{ list-style:none; margin-top: 40px; padding:0 }
+.news-list li{
+  display:flex; align-items:center; gap:10px;
+  margin:14px 0; font-size:clamp(.88rem,.18vw + .82rem,.96rem); line-height:2.0;
+}
+/* About page (bulb) chips — equal rectangular size */
+#news-preview .news-date-badge{
+  box-sizing: border-box;
+  width: 80px;          /* = same width for all chips (tweak here) */
+  flex: 0 0 80px;       /* lock the width in the flex row */
+  height: 20px;          /* uniform height (tweak here) */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;            /* height controls vertical size */
+  font-size: .90rem;    /* date text size (tweak here) */
+  font-weight: 500;
+  background: #cfcfcf;
+  color: #111;
+  border: 0;
+  border-radius: 0;      /* rectangular */
+}
+
+body.dark .news-date-badge{
+  background:#2f3137; color:#f6f7fb; border-color:transparent;
+}
+
+/* match venue color to the “X papers” accent */
+#news .news-list b,
+#news .news-list .news-venue{
+  color: var(--accent-2) !important;   /* light: maroon */
+}
+body.dark #news .news-list b,
+body.dark #news .news-list .news-venue{
+  color: var(--accent) !important;     /* dark: blue */
+}
+
+.news-more{display: flex;
+  align-items: center;
+  gap: 8px;  margin-top: 10px; }
+  /* increase space after the news teaser */
+.news-more{ margin-top:10px; margin-bottom:20px; }   /* add margin-bottom */
+          /* small gap above the link */
+/* all news … link — remove underline in all states */
+.news-more-link,
+.news-more-link:visited,
+.news-more-link:hover,
+.news-more-link:focus {
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+}
+
+.news-more-link{
+  color: var(--accent-2);
+  font-weight: 600;
+}
+.news-more-link:hover,
+.news-more-link:focus {
+  color: var(--accent);
+}
+
+/* Make "4 papers / 7 papers …" look like the venue links */
+#news-preview .news-count,
+#news-preview .news-venue{
+  color: var(--accent-2);
+  text-decoration-color: var(--accent-2);
+  font-weight: 600;                 /* matches the visual weight */
+}
+
+#news-preview .news-count:hover,
+#news-preview .news-venue:hover{
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* (optional) also style links in the full News page */
+#news .news-list a{
+  color: var(--accent-2);
+  text-decoration-color: var(--accent-2);
+  font-weight: 600;
+}
+#news .news-list a:hover{
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+/* --- NEWS: remove underlines & make maroon bold a bit smaller --- */
+
+/* teaser (on About page) */
+#news-preview .news-count,
+#news-preview .news-venue{
+  text-decoration: none;          /* no underline */
+  font-size: 0.95em;              /* slightly smaller */
+  font-weight: 600;               /* keep bold look */
+}
+#news-preview .news-count:hover,
+#news-preview .news-venue:hover{
+  text-decoration: none;          /* keep no underline on hover */
+  color: var(--accent);           /* you can keep the color change */
+}
+
+/* full News page list */
+#news .news-list a{
+  text-decoration: none;          /* no underline */
+  font-size: 0.95em;              /* slightly smaller */
+  font-weight: 600;
+}
+#news .news-list a:hover{
+  text-decoration: none;          /* keep no underline on hover */
+  color: var(--accent);
+}
+/* venue word color: maroon (light) / blue (dark) */
+.news-venue{
+  color: var(--accent-2);     /* light mode maroon */
+  font-weight: inherit;       /* don't force bold */
+}
+body.dark .news-venue{
+  color: var(--accent);       /* dark mode blue */
+}
+
+
+/* ============ SELECTED PUBLICATIONS (About teaser) ============ */
+#about-selected{ margin-top:.2rem }
+#about-selected .section-heading{ display:flex; align-items:center; gap:.45rem; margin:0 }
+#about-selected .section-star{ font-size:2rem; line-height:1; filter:drop-shadow(0 1px 1px rgba(0,0,0,.15)) }
+#about-selected .section-title{
+  margin:0; padding:0; line-height:1.05; font-weight:400;
+  letter-spacing:-.02em; font-size:clamp(1.35rem,2.2vw,1.9rem); color:#111
+}
+body.dark #about-selected .section-title{ color:#f2f2f2 }
+/* Star + title without overlap */
+#about-selected .section-title.with-star{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  padding-left:0;
+  margin:0;
+  line-height:1.1;
+}
+#about-selected .section-title.with-star::before{
+  content:"⭐";
+  color: #facc15;             /* bright gold */
+  text-shadow: 0 1px 3px rgba(0,0,0,.3);
+  position:static;
+  transform:none;
+  font-size:1.5em;
+  line-height:1;
+  color: #fde68a;
+}
+
+/* card list */
+#about-selected .selected-list{
+  list-style:none; margin:22px 0 0; padding:0;
+  display:grid; gap:28px;row-gap: 56px;
+}
+#about-selected .sel-card{
+  display:grid; grid-template-columns:180px minmax(0, 1fr); gap:28px; align-items: start;;margin: 0 !important;       /* no outer margins—gap controls spacing */
+  padding-block: 4px; 
+}
+
+/* Selected Publications — no overlap, rectangular poster */
+#about-selected .sel-thumb{
+  position: relative;
+  padding-top: 32px;                 /* == ribbon height */
+  border-radius: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+
+#about-selected .venue-ribbon{
+  position: absolute;                /* stays on top edge */
+  top: 0; left: 0; right: 0;
+  height: 32px;                      /* keep in sync with padding-top */
+  padding: 0 10px;
+  display: flex; align-items: center; justify-content: center;
+  background: #7f1029;
+  color: #fff;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .8rem;
+  border: 0;
+  background: var(--accent) !important;  /* blue */
+  color: var(--bg) !important;    
+}
+/* make PDF link chips and ABS button look the same (transparent) */
+#about-selected .sel-actions a.chip,
+#about-selected .sel-actions .abs-toggle{
+  background: transparent !important;  
+  color: var(--chip-text);
+  border: 2px solid var(--chip-border);
+  box-shadow: none;
+  border-radius: 0;
+  padding: 4px 10px;
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 1;
+  -webkit-appearance:none;
+  appearance: none;
+}
+
+#about-selected .sel-actions a.chip:hover,
+#about-selected .sel-actions a.chip:focus-visible,
+#about-selected .sel-actions .abs-toggle:hover,
+#about-selected .sel-actions .abs-toggle:focus-visible{
+  color: var(--accent);
+  border-color: var(--accent);
+  outline: none;
+}
+
+
+#about-selected .sel-thumb img{
+  display: block;                    /* kills inline gap */
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;               /* optional; keep if you like */
+  object-fit: cover;
+  border: 0;
+  border-radius: 0;
+}
+
+/* dark mode poster border/shadow */
+body.dark #about-selected .sel-thumb{
+  border-color:#3a3a4a;
+  box-shadow:0 2px 14px rgba(0,0,0,.35);
+}
+
+
+/* dark mode poster border/shadow */
+body.dark #about-selected .sel-thumb{
+  border-color:#3a3a4a;
+  box-shadow:0 2px 14px rgba(0,0,0,.35);
+}
+
+/* right side meta */
+#about-selected .sel-title{ margin:0 0 6px; font-size:clamp(.88rem, .5vw + .55rem, 1rem); line-height:1.25 }
+#about-selected .sel-title a{ color:#111; text-decoration:none }
+#about-selected .sel-title a:hover{ text-decoration:underline }
+body.dark #about-selected .sel-title a{ color:#f0f0fa }
+#about-selected .sel-authors{ margin:0 0 6px; color:#666 }
+body.dark #about-selected .sel-authors{ color:#c7c7d4 }
+
+/* Author highlight: same size/weight as others, just underline my name */
+.sel-authors .me,
+#publications .me{
+  font-weight: inherit;            /* no extra bold */
+  color: var(--accent-2);                 /* same color as other authors */      /* only underline */
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: var(--accent-2);
+  text-decoration-line: underline;
+  text-decoration-thickness: 2.5px;
+  text-underline-offset: 3px;
+  text-decoration-style: dashed;  /* optional: maroon underline */
+}
+
+body.dark .sel-authors .me,
+body.dark #publications .me{
+  font-weight: inherit;
+  color: var(--accent); 
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: var(--accent);   /* optional: blue-ish underline in dark */
+}
+
+
+/* chips */
+.sel-actions{ display:flex; gap:.6rem; flex-wrap:wrap; align-items:center;  margin-bottom: 12px; }
+.chip{
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  padding:4px 10px; line-height:1; font-size:12px; font-weight:800; letter-spacing:.02em;
+  text-transform:uppercase; text-decoration:none;
+  border-radius:0; box-shadow:none;
+}
+.chip:not(.soft){
+  background:#fff; color:var(--chip-text); border:2px solid var(--chip-border);
+}
+.chip.soft{
+  background:var(--chip-fill); color:var(--chip-text); border:0;
+}
+
+/* ============ FULL PUBLICATIONS LIST (shared) ============ */
+/* Publications header: bigger title, smaller subline, no hairline */
+#publications .pub-heading{
+  margin: .1em 0 .25em;
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  font-size: clamp(1.3rem, 2.1vw, 2.0rem);  /* larger title */
+  color: var(--accent-2); 
+  border: 0;                              /* no hairline */
+  padding-bottom: 0;
+  padding-top: 10px;
+                 
+}
+/* Add space between Journal heading and its first paper */
+#publications .pub-heading + ul {
+  margin-top: 40px;   /* increase or decrease this value */
+}
+
+#publications .pub-subline{
+  margin: .1em 0 1.2em;
+  color: var(--muted);
+  font-size: clamp(.68rem, .38vw + .65rem, .88rem);  /* smaller than before */
+  line-height: 1.3;                                   /* optional: tighter */
+  font-weight: 400;
+  text-indent: 0.9em;
+  margin-bottom: 60px;
+}
+/* utilities */
+.ital { font-style: italic; }
+
+#publications ul > li{ margin-bottom: 50px; }
+
+
+#publications li > b:first-child{ color:#000; font-weight:800;display: block !important;
+  margin: 8px 0 4px !important;} #publications li > b:first-child a{ color: inherit; }          /* keep links same color */
+
+/* dark mode: make titles white like authors */
+body.dark #publications li > b:first-child,
+body.dark #publications li > b:first-child a{
+  color: var(--text) !important;     /* uses your dark theme text color */
+}
+
+/* if you used <span class="title-strong"> inside the title */
+body.dark #publications .title-strong{ color: inherit; }  /* ↑top gap if you need, ↓bottom is the gap before authors */
+
+#publications .pdf-badge, #publications .pub-chip{ /* ABS/PDF */
+  display:inline-block; align-items:center; justify-content:center;
+  padding:4px 10px; font-size:12px; font-weight:800; letter-spacing:.02em;
+  text-transform:uppercase; text-decoration:none; line-height:1;
+  background: transparent;color: var(--text); border:1px solid var(--chip-border); border-radius:0;margin-top: 12px;border-color: #444; border-color: #fff;margin-right: 10px;   
+}
+#publications .pub-venue{ /* venue tag */
+  display:inline-block; align-items:center; justify-content:center;
+  padding:4px 10px; font-size:12px; font-weight:800; letter-spacing:.02em;
+  text-transform:uppercase; line-height:1;
+  background:#cfcfcf;  color:#111;   border:0; border-radius:0;margin-top: 8px
+}
+/* Full publications only */
+#publications .pdf-badge,
+#publications .pub-chip{ border-color:#111; }           /* light mode */
+body.dark #publications .pdf-badge,
+body.dark #publications .pub-chip{ border-color:rgba(255,255,255,.65); }  /* dark */
+
+
+.site-footer{
+  position: fixed;        /* <— keep it visible while scrolling */
+  left: 0; right: 0; bottom: 0;
+  z-index: 999;           /* above content */
+  background:#fff;
+  color:  #000;
+  border-top: 0;
+  padding: 0.65em 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Center contents if you keep .container inside */
+.site-footer .container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+
+
+body{ padding-bottom: 48px; }   /* adjust if you change footer height */
+
+.site-footer .footer-top{display:flex;align-items:center;gap:.75em;margin-bottom:.4em;font-weight:600;color:#9aa0a6}
+.site-footer .footer-link{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:.35em}
+.site-footer .footer-link:hover{color:var(--accent)}
+body.dark .site-footer{
+  background:#000; border-top:1px solid #3a3a4a; color:#fff;
+}
+body.dark .site-footer .footer-link{ color:inherit; }
+body.dark .site-footer .footer-link:hover{ color:var(--accent) }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 900px){
+  .container{padding:0 .7em}
+  .profile-section{padding:1.5em 1em}
+  .header-flex{ padding-left: calc(.7em + 1.5em); } 
+}
+@media (max-width: 800px){
+  .profile-section{flex-direction:column; align-items:flex-start; gap:1.2em}
+  .profile-right{align-items:flex-start}
+  .profile-right img,.hero-photo{width:100%; max-width:560px}
+  #about-selected .sel-card{ grid-template-columns:1fr }
+  .header-flex{ padding-left: .7em; }
+}
+ 
+
+@media (max-width: 520px){
+  :root{
+    --icon-box: 40px;
+    --icon-font: 24px;
+  }
+}
+/* Selected Publications title link + hover color */
+#about-selected .sel-title a{
+  color: #111;
+  text-decoration: none;
+  transition: color .15s ease;
+}
+
+#about-selected .sel-title a:hover,
+#about-selected .sel-title a:focus{
+  color: var(--accent);                 /* maroon on hover */
+  text-decoration: underline;
+  text-decoration-color: var(--accent); /* maroon underline */
+}
+
+/* optional base color in dark mode */
+body.dark #about-selected .sel-title a{ color: var(--text); }
+/* Make header fixed on scroll + offset page content */
+
+header{
+  position: fixed;                    /* stick to top always */
+  top: 0; left: 0; right: 0;
+  z-index: 1001;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--header-underline);  /* or 0 if you don't want a line */
+}
+
+body{ padding-top: var(--header-h); } /* keep content from sliding under header */
+/* Year divider line + large light year label on the right */
+#publications .year-sep{
+  list-style: none;             /* no bullet */
+  position: relative;
+  height: 1px;                  /* the hairline */
+  background: var(--border);    /* thin grey line */
+  margin: 26px 0 20px;          /* spacing around the divider */
+  padding: 0;
+}
+
+#publications .year-sep::after{
+  content: attr(data-year);     /* shows 2025 from data-year */
+  position: absolute;
+  right: 0;
+  top: -34px;                   /* lift number above the line */
+  font-weight: 600;
+  line-height: 2;
+  font-size: clamp(2.2rem, 7vw, 4.5rem);  /* big, responsive */
+  color: rgba(0,0,0,.10);       /* subtle watermark look */
+  pointer-events: none;
+}
+#publications .year-sep.no-line{
+  background: none;   /* removes the hairline */
+  height: 0;
+  margin-top: 0;      /* optional: tighten spacing */
+}
+/* keep the “2025” label: do NOT touch ::after */
+
+body.dark #publications .year-sep{ background: rgba(255,255,255,.12); }
+body.dark #publications .year-sep::after{ color: rgba(255,255,255,.12); }
+
+/* Bigger lead phrase at start of a title */
+#publications .title-lead{
+  font-weight: 900;             /* keep bold; reduce to 700 if you want */
+  font-size: 1.22em;            /* ~22% larger than the rest of the title */
+  letter-spacing: -0.01em;      /* crisper look */
+  line-height: 1.15;            /* helps if it wraps */
+  
+}
+/* Make my name (class="me") light maroon everywhere it appears */
+#publications .me,
+.sel-authors .me{
+  color: var(--accent-2) !important;          /* light maroon in light mode */
+}
+
+/* Keep good contrast in dark mode */
+body.dark #publications .me,
+body.dark .sel-authors .me{
+  color: var(--accent) !important;             /* lighter blue-ish accent you set for dark */
+  text-decoration-color: var(--accent) !important;
+}
+#about-selected .sel-actions .chip.soft{
+  background: #cfcfcf !important; /* same as #publications .pub-venue */
+  color: #111 !important;
+  border: 0;
+  box-shadow: none;
+}
+/* Selected Publications: make PDF/ABS chips transparent */
+#about-selected .sel-actions a.chip{
+  background: transparent !important;  
+  color: var(--chip-text);
+  border: 2px solid var(--chip-border);
+  box-shadow: none;
+}
+
+/* optional: nicer hover/focus just for these */
+#about-selected .sel-actions a.chip:hover,
+#about-selected .sel-actions a.chip:focus-visible{
+  color: var(--accent);
+  border-color: var(--accent);
+  outline: none;
+}
+/* News: color only these specific words (works in light & dark) */
+#news .news-list li:nth-child(5) b,        /* INTERSPEECH, ICASSP, EUSIPCO 2025 */
+#news .news-list li:nth-child(6) b:first-of-type, /* IBM */
+#news .news-list li:nth-child(7) b:first-of-type  /* First-Class */
+{
+  color: var(--accent-2) !important;  /* maroon in light, blue in dark (you already set these tokens) */
+}
+/* News counts (first bold in items 1–4): maroon in light, blue in dark */
+#news .news-list li:nth-child(-n+4) b:first-of-type{
+  color: var(--accent-2) !important;   /* light */
+}
+body.dark #news .news-list li:nth-child(-n+4) b:first-of-type{
+  color: var(--accent) !important;     /* dark */
+}
+/* Full News: make the date look like a chip */
+#news .news-list .news-date{
+  flex: 0 0 92px; 
+  width: 92px;
+  text-align: center; 
+  display:inline-block;
+  background:#cfcfcf;   /* same grey as your venue badge */
+  color:#111;
+  font-weight:300;
+  font-size:.9em;
+  padding:2px 10px;
+  border-radius:0px;
+  line-height:1.2;
+  margin-right:1px;
+  vertical-align:middle;
+  border:0;
+  margin-top: 8px; 
+  
+  
+}
+/* keep same look in dark mode */
+body.dark #news .news-list .news-date{
+  background:#cfcfcf;
+  color:#111;
+}
+/* Abstract panel — hidden by default */
+.abstract-box{
+  display:none;               /* hidden by default */ 
+  margin-top:16px 0 0 0;  
+  padding:14px 18px;
+  border:1px dashed var(--muted);
+  background: rgba(255,255,255,0.04);
+  border-radius:0px;
+  font-size:0.95rem;
+  line-height:1.5;
+  width: 100%;
+box-sizing: border-box;
+text-align: justify;
+text-justify: inter-word;
+text-align-last: left;     /* last line isn’t stretched */
+hyphens: auto;
+overflow-wrap: anywhere; 
+margin-top:14px /* long tokens won’t overflow */
+
+}
+abstract-box.open { display: block; }
+body:not(.dark) .abstract-box{
+  background:#f6f6f6;
+  border-color:#bbb;
+}
+/* --- Selected Publications: enforce perfectly equal gaps --- */
+
+/* 1) Fix a typo and keep grid rows aligned */
+#about-selected .sel-card{
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 28px;
+  align-items: start;         /* <- was "align-items:align-items start" */
+  margin: 0 !important;       /* no outer margins—gap controls spacing */
+  padding-block: 4px;         /* creates a margin barrier to avoid collapse */
+}
+
+/* 2) Let the list own spacing only via gap/row-gap */
+#about-selected .selected-list{
+  display: grid;
+  gap: 28px;
+  row-gap: 56px;              /* equal vertical space between every card */
+}
+#about-selected .selected-list > li{
+  margin: 0 !important;       /* kill any stray li margins */
+}
+
+/* 3) Neutralize child margins that might “leak” out of the card */
+#about-selected .sel-card :where(h1,h2,h3,p,.sel-actions,.abstract-box){
+  margin-block-start: 0;
+}
+#about-selected .sel-card :where(.sel-actions,.abstract-box){
+  margin-block-end: 0;
+}
+
+/* 4) Optional: keep poster/thumbs from nudging layout */
+#about-selected .sel-thumb img{
+  display: block;
+}
+/* --- ONE PATCH: perfect, equal spacing between selected-publication cards --- */
+#about-selected .selected-list{
+  display: grid;
+  row-gap: 56px;         /* uniform vertical gap */
+  column-gap: 28px;
+  margin: 22px 0 0;
+  padding: 0;
+}
+
+#about-selected .selected-list > li{ 
+  margin: 0 !important;  /* kill stray li margins */
+}
+
+#about-selected .sel-card{
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 28px;
+  align-items: start;     /* fix earlier typo */
+  margin: 0 !important;
+  overflow: hidden;       /* stops child-margin collapse that created the bigger 2→3 gap */
+}
+
+/* neutralize first/last child margins inside each card */
+#about-selected .sel-card > :first-child{ margin-top: 0 !important; }
+#about-selected .sel-card > :last-child { margin-bottom: 0 !important; }
+/* --- Selected Publications: perfectly aligned abstract box --- */
+
+/* safety: prevent content overflow in the right column */
+#about-selected .sel-card{
+  grid-template-columns: 180px minmax(0, 1fr);
+  align-items: start;
+}
+
+/* the abstract box should fill the right column and justify text */
+#about-selected .abstract-box{
+  
+  grid-column: 2;                /* sit in the right column */
+  width: 100%;
+  box-sizing: border-box;
+
+  margin: 12px 0 0 0 !important; /* no side offsets */
+  padding: 16px 20px;
+
+  border: 1px dashed var(--muted);
+
+  /* full justification (both edges straight) */
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: left;         /* keep last line natural */
+  hyphens: auto;                 /* nicer breaks on narrow screens */
+  overflow-wrap: anywhere;       /* avoid overflow from long tokens */
+}
+
+/* tidy paragraph spacing inside the box */
+#about-selected .abstract-box p{ margin: 0 0 .9em 0; }
+#about-selected .abstract-box p:last-child{ margin-bottom: 0; }
+
+/* ensure siblings (title/authors/chips) share the same left edge */
+#about-selected .sel-card .sel-title,
+#about-selected .sel-card .sel-authors,
+#about-selected .sel-card .sel-actions{
+  margin-left: 0 !important;
+}
+/* --- FORCE SPACE BETWEEN CHIPS AND ABSTRACT (Selected + Full) --- */
+#about-selected .sel-actions + .abstract-box::before,
+#publications   .sel-actions + .abstract-box::before{
+  content: "";
+  display: block;
+  height: 14px; 
+       /* ← adjust this value to taste (e.g., 10–18px) */
+}
+
+/* optional: keep chips row from looking cramped */
+#about-selected .sel-actions,
+#publications   .sel-actions{
+  margin-bottom: 0 !important; /* let the spacer control the gap */
+}
+/* AWARDS */
+/* =========================
+   AWARDS (single consolidated block)
+   ========================= */
+.awards-list{
+  margin: 16px 0 24px;
+  padding-left: 2.8em;             /* bullets like the reference */
+}
+.awards-list > li{
+  margin: 24px 0;
+  line-height: 1.6;
+  padding-top: 5px;
+  font-weight:300;
+}
+
+/* Headings/subline + bold color */
+#awards .pub-heading{
+  font-size: clamp(1.2rem, 2.3vw, 2.0rem);
+  border-bottom: 0;
+  margin-top: -15px;
+}
+#awards .pub-subline{
+  font-size: clamp(.6rem, .5vw + .50rem, .85rem);
+  margin-top: -12px;
+}
+#awards b{ color: var(--accent-2); }         /* light */
+body.dark #awards b{ color: var(--accent); } /* dark */
+
+/* Tag row to the right of bullet */
+.award-tags{
+  display: inline-flex;
+  gap: .4rem;
+  margin-left: .6rem;
+}
+
+/* Base chip look (rectangular) */
+.award-tags .chip{
+  padding: 3px 8px;
+  font-weight: 800;
+  font-size: 11px;
+  border: 0;
+  border-radius: 0;                /* rectangular */
+}
+
+/* Light mode:
+   - All chips (except the first) = dark maroon with white text
+   - First chip = pale cream date with dark text
+*/
+#awards .award-tags > .chip,
+#awards .award-tags > a.chip{
+  background: #7f1d2d;            /* maroon */
+  color: #fff;
+}
+#awards .award-tags > .chip:first-child,
+#awards .award-tags > a.chip:first-child,
+#awards .award-tags > .chip.soft:first-child{
+  background: #f7f1c3;            /* pale cream date */
+  color: #111;
+}
+
+/* Dark mode:
+   - All chips (except the first) = blue with white text
+   - First chip = khaki date with white text
+*/
+body.dark #awards .award-tags > .chip,
+body.dark #awards .award-tags > a.chip{
+  background: #4DA1C7;            /* blue */
+  color: #fff;
+}
+body.dark #awards .award-tags > .chip:first-child,
+body.dark #awards .award-tags > a.chip:first-child,
+body.dark #awards .award-tags > .chip.soft:first-child{
+  background: #6F745F;            /* khaki date */
+  color: #fff;
+}
+/* force BLACK BOLD wherever you need */
+.kbold, .kbold b, .kbold strong { 
+  font-weight: 800 !important; 
+  color: var(--text) !important; 
+  font-synthesis-weight: none;
+}
+.kbold a { color: inherit !important; text-decoration-color: currentColor; }
+
+/* Paragraph styling */
+.collab-line {
+  background: linear-gradient(90deg, #fdf4f7, #f8e6ee, #f4dbe7); /* very light maroon gradient */
+  padding: 0.20rem 0.25rem;
+  margin-left: -2px;
+  border-radius: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #4a2b33; /* normal text color */
+}
+
+/* “interested in collaborating” & “contact me” */
+.collab-line .collab-emph {
+  font-weight: 700;
+  color: #8b1c3c; /* maroon */
+}
+
+/* Email link inside this paragraph */
+.collab-line a {
+  font-weight: 600;
+  color: #8b1c3c;
+  text-decoration: none;
+}
+
+.collab-line a:hover {
+  text-decoration: underline;
+}
+
+/* make these words in the collab line bold + maroon */
+.collab-line .collab-emph{
+  font-weight:700;
+  color:#8b1c3c;             /* maroon */
+}
+
+/* PhD opportunities paragraph */
+/* PhD opportunities line */
+.phd-line {
+  /* very light maroon gradient */
+  background: linear-gradient(90deg, #fbeff2, #f6e4ea, #f2d7e2);
+  border-left: 4px solid #8b1c3c;      /* dark maroon vertical strip */
+  padding: 0.45rem 0.55rem;
+  margin-left: -2px;
+  margin-top: 0.60rem;
+  margin-bottom: 0;
+  border-radius: 0px;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #3a2430;                      /* dark text on light gradient */
+}
+
+/* make “PhD opportunities for Fall 2026” maroon + bold */
+.phd-line .phd-emph {
+  font-weight: 700;
+  color: #8b1c3c;
+}
+
+
+
+
+
+/* --- shared colors --- */
+:root {
+  /* you can already have your own vars; this is just an example */
+  --accent-maroon: #8b1c3c;
+}
+
+/* dark mode color tokens (taken from your badge) */
+body.dark {
+  --card-dark-bg: #212d3d;   /* same kind of navy as the badge background */
+  --accent-dark:   #7fb8ff;  /* same light blue as badge text/links */
+}
+
+/* === DARK MODE OVERRIDES === */
+
+/* collab line */
+body.dark .collab-line {
+  background: var(--card-dark-bg);   /* flat navy block */
+  color: #f5f5ff;                    /* light text */
+}
+
+body.dark .collab-line .collab-emph,
+body.dark .collab-line a {
+  color: var(--accent-dark);         /* same blue as badge text */
+}
+
+/* PhD line */
+body.dark .phd-line {
+  background: var(--card-dark-bg);
+  border-left-color: var(--accent-dark);
+  color: #f5f5ff;
+}
+
+body.dark .phd-line .phd-emph {
+  color: var(--accent-dark);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
